@@ -1,0 +1,15 @@
+Point Important - Dossier architecture 
+
+5 Décembre - Dossier architecture (Logiciel)
+
+	- Diagramme UML :
+		- Cas d'utilisation
+		- Activité (chaque poste de travail)
+Obligatoire :	- Composants / Classe
+Obligatoire :   - Séquence
+
+	- Détails / Explicagiton des DP utilisés, MVC inclus
+
+	- MCD BDD + Script SQL Création BDD
+
+	
