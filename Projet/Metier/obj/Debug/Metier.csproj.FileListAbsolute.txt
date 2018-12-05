@@ -1,0 +1,6 @@
+C:\Users\Pitel\Desktop\Projet\Metier\obj\Debug\Metier.csprojAssemblyReference.cache
+C:\Users\Pitel\Desktop\Projet\Metier\obj\Debug\Metier.csproj.CoreCompileInputs.cache
+C:\Users\Pitel\Desktop\Projet\Metier\bin\Debug\Metier.dll
+C:\Users\Pitel\Desktop\Projet\Metier\bin\Debug\Metier.pdb
+C:\Users\Pitel\Desktop\Projet\Metier\obj\Debug\Metier.dll
+C:\Users\Pitel\Desktop\Projet\Metier\obj\Debug\Metier.pdb
