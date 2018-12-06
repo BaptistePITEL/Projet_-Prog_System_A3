@@ -1,5 +1,6 @@
 using Metier;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 
 namespace UnitTestProject1
 {
@@ -7,54 +8,52 @@ namespace UnitTestProject1
     public class UnitTest1
     {
         private Restaurant resto;
-        private GroupeClient gc;
-        private Rang rg;
-        private Carre carre;
-        private MaitreHotel mH;
-        private ChefDeRang chefR;
-        private Table table;
+        private GroupeClient gc1;
+        private GroupeClient gc2;
         private Client clt1;
         private Client clt2;
+
+
 
         [TestInitialize]
         public void TestInitialize()
         {
-            resto = new Restaurant();
-            gc = new GroupeClient();
-            rg = new Rang();
-            carre = new Carre();
-            mH = new MaitreHotel("Charles");
-        }
-        
-        
-        
-       
+
+            RestaurantBuilder restaurantBuilder = new RestaurantBuilder();
+            RestaurantEngineer restaurantEngineer = new RestaurantEngineer(restaurantBuilder);
+            List<string> list = new List<string>();
+            list.Add("Didier");
+            list.Add("Gilbert");
+            restaurantEngineer.makeRestaurant(2, 6, 3, 5, list, "Gontrand");
+            resto = restaurantEngineer.getRestaurant();
+
+            gc1 = new GroupeClient();
+            gc2 = new GroupeClient();
+
+            FabriqueClient fabriqueClient = new FabriqueClient();
+
+            clt1 = fabriqueClient.create(gc1);
+            clt2 = fabriqueClient.create(gc1);
+
+            gc1.clients.Add(clt1);
+            gc1.clients.Add(clt2);
+
+            for(int i = 0; i < 6; i++)
+            {
+                gc2.clients.Add(fabriqueClient.create(gc2));
+
+            }
+        }      
 
         [TestMethod]
         public void TestAccueilClient()
         {
-            table = new Table(2);
-            chefR = new ChefDeRang(carre, "Didier");
-            clt1 = new Client(gc, "Jacques");
-            clt2 = new Client(gc, "Denis");
+            resto.groupeClientArrive(gc1);
 
-            rg.tables.Add(table);
-
-            carre.rangs.Add(rg);
-            carre.chefDeRang = chefR;
-
-            resto.carres.Add(carre);
-            resto.maitreHotel = mH;
-
-            mH.resto = resto;
-
-            gc.clients.Add(clt1);
-            gc.clients.Add(clt2);
-
-            resto.groupeClientArrive(gc);
+            resto.groupeClientArrive(gc2);
             resto.tick();
       
-            Assert.AreNotEqual(null, gc.table);
+            Assert.AreNotEqual(null, gc1.table);
         }
     }
 }

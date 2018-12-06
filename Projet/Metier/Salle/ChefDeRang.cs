@@ -24,11 +24,11 @@ namespace Metier
 
         public override void tick()
         {
-            if(!this.table.ontCarte)
+           /* if(!this.table.ontCarte && !this.table.ontPrisCommande)
             {
                 attribuerCarte();
             }
-            else if (this.gC != null)
+            else*/ if (this.gC != null)
             {
                 attribuerTable();
             }
@@ -53,22 +53,32 @@ namespace Metier
             {
                 foreach (Table t in r.tables)
                 {
-                    if (t.grclient == null)
+                    if (gC.clients.Count <= t.nbPlaces )
                     {
-                        this.gC.table = t;
-                        this.table = t;
-                        t.grclient = gC;
-                        this.gC = null;
-                        quitter = 1;
+                        if (t.grclient == null)
+                        {
+                            this.gC.table = t;
+                            this.table = t;
+                            t.grclient = gC;
+                            this.gC = null;
+                            quitter = 1;
+                            Console.WriteLine(t.nbPlaces);
+                            break;
+                        }
                     }
+
                 }
-                if (quitter == 0)
+                if(quitter == 1)
                 {
-                    log("Aucune table de disponible dans ce carré" + carre.id);
+                    break;
                 }
             }
+            if (quitter == 0)
+            {
+                log("Aucune table de disponible dans le carré" + carre.id);
+            }
         }
-
+        
         public void attribuerCarte()
         {
             int quitter = 0;

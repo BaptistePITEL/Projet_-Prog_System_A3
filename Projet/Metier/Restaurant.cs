@@ -37,6 +37,11 @@ namespace Metier
         {
             this.listAttente.Add(gc);
         }
-        
+
+        public void addMaitreHotel(MaitreHotel maitreHotel)
+        {
+            this.maitreHotel = maitreHotel;
+        }
+
     }
 }

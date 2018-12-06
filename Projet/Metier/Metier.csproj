@@ -41,21 +41,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Metier\Materiel.cs" />
-    <Compile Include="Metier\Carre.cs" />
-    <Compile Include="Metier\ChefDeRang.cs" />
-    <Compile Include="Metier\GroupeClient.cs" />
-    <Compile Include="Metier\Rang.cs" />
-    <Compile Include="Metier\Restaurant.cs" />
-    <Compile Include="Metier\MaitreHotel.cs" />
-    <Compile Include="Metier\Client.cs" />
-    <Compile Include="Metier\Personnel.cs" />
+    <Compile Include="Builder\GeneralRestaurantBuilder.cs" />
+    <Compile Include="Builder\RestaurantBuilder.cs" />
+    <Compile Include="Builder\RestaurantEngineer.cs" />
+    <Compile Include="Cuisine\ChefDeCuisine.cs" />
+    <Compile Include="Salle\EnumEtatTable.cs" />
+    <Compile Include="Factory\FabriqueClient.cs" />
+    <Compile Include="Salle\CommisSalle.cs" />
+    <Compile Include="Salle\Materiel.cs" />
+    <Compile Include="Salle\Carre.cs" />
+    <Compile Include="Salle\ChefDeRang.cs" />
+    <Compile Include="Salle\GroupeClient.cs" />
+    <Compile Include="Salle\Rang.cs" />
+    <Compile Include="Restaurant.cs" />
+    <Compile Include="Salle\MaitreHotel.cs" />
+    <Compile Include="Salle\Client.cs" />
+    <Compile Include="Salle\Personnel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Builder\RestoBuilder.cs" />
-    <Compile Include="Metier\Table.cs" />
+    <Compile Include="Salle\Table.cs" />
+    <Compile Include="Salle\Serveur.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Factory\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

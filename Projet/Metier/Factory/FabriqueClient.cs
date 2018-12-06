@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Metier.Factory
+namespace Metier
 {
-    class FabriqueClient
+   public  class FabriqueClient
     {
         public Client create(GroupeClient groupeClient)
         {
