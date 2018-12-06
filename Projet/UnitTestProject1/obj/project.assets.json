@@ -5835,11 +5835,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Pitel\\Desktop\\Projet\\UnitTestProject1\\UnitTestProject1.csproj",
+      "projectUniqueName": "C:\\Users\\Pitel\\Desktop\\CESI Exia\\A3\\Semestre 5\\Bloc 2 - Programmation\\Projet_Prog_System_A3\\Projet_Prog_System_A3\\Projet\\UnitTestProject1\\UnitTestProject1.csproj",
       "projectName": "UnitTestProject1",
-      "projectPath": "C:\\Users\\Pitel\\Desktop\\Projet\\UnitTestProject1\\UnitTestProject1.csproj",
+      "projectPath": "C:\\Users\\Pitel\\Desktop\\CESI Exia\\A3\\Semestre 5\\Bloc 2 - Programmation\\Projet_Prog_System_A3\\Projet_Prog_System_A3\\Projet\\UnitTestProject1\\UnitTestProject1.csproj",
       "packagesPath": "C:\\Users\\Pitel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Pitel\\Desktop\\Projet\\UnitTestProject1\\obj\\",
+      "outputPath": "C:\\Users\\Pitel\\Desktop\\CESI Exia\\A3\\Semestre 5\\Bloc 2 - Programmation\\Projet_Prog_System_A3\\Projet_Prog_System_A3\\Projet\\UnitTestProject1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5858,8 +5858,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Pitel\\Desktop\\Projet\\Metier\\Metier.csproj": {
-              "projectPath": "C:\\Users\\Pitel\\Desktop\\Projet\\Metier\\Metier.csproj"
+            "C:\\Users\\Pitel\\Desktop\\CESI Exia\\A3\\Semestre 5\\Bloc 2 - Programmation\\Projet_Prog_System_A3\\Projet_Prog_System_A3\\Projet\\Metier\\Metier.csproj": {
+              "projectPath": "C:\\Users\\Pitel\\Desktop\\CESI Exia\\A3\\Semestre 5\\Bloc 2 - Programmation\\Projet_Prog_System_A3\\Projet_Prog_System_A3\\Projet\\Metier\\Metier.csproj"
             }
           }
         }

@@ -23,6 +23,10 @@ namespace Metier
         public  void tick()
         {
             maitreHotel.tick();
+            foreach(Carre c in carres)
+            {
+                c.chefDeRang.tick();                
+            }
         }
         public void tickFor(int x)
         {

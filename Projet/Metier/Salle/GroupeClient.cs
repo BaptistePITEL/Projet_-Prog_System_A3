@@ -17,5 +17,7 @@ namespace Metier
             this.clients = new List<Client>();
             this.statut = false;
         }
+
+
     } 
 }
