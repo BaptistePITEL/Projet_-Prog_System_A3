@@ -12,5 +12,15 @@ namespace Metier.Cuisine
         public int nbPers;
         public float tempsPrepa, tempsCuisson, tempsRepos;
 
+        public Recette(string categorie, string titre, string recette, int nbPers, float tempsPrepa, float tempsCuisson, float tempsRepos)
+        {
+            this.categorie = categorie;
+            this.titre = titre;
+            this.recette = recette;
+            this.nbPers = nbPers;
+            this.tempsPrepa = tempsPrepa;
+            this.tempsCuisson = tempsCuisson;
+            this.tempsRepos = tempsRepos;
+        }
     }
 }
