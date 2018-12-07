@@ -5829,23 +5829,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Pitel\\.nuget\\packages\\": {},
+    "C:\\Users\\Benja\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Pitel\\Desktop\\CESI Exia\\A3\\Semestre 5\\Bloc 2 - Programmation\\Projet_Prog_System_A3\\Projet_Prog_System_A3\\Projet\\UnitTestProject1\\UnitTestProject1.csproj",
+      "projectUniqueName": "C:\\Users\\Benja\\Desktop\\CESI\\A3\\Projet dev\\Projet_Prog_System_A3\\Projet\\UnitTestProject1\\UnitTestProject1.csproj",
       "projectName": "UnitTestProject1",
-      "projectPath": "C:\\Users\\Pitel\\Desktop\\CESI Exia\\A3\\Semestre 5\\Bloc 2 - Programmation\\Projet_Prog_System_A3\\Projet_Prog_System_A3\\Projet\\UnitTestProject1\\UnitTestProject1.csproj",
-      "packagesPath": "C:\\Users\\Pitel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Pitel\\Desktop\\CESI Exia\\A3\\Semestre 5\\Bloc 2 - Programmation\\Projet_Prog_System_A3\\Projet_Prog_System_A3\\Projet\\UnitTestProject1\\obj\\",
+      "projectPath": "C:\\Users\\Benja\\Desktop\\CESI\\A3\\Projet dev\\Projet_Prog_System_A3\\Projet\\UnitTestProject1\\UnitTestProject1.csproj",
+      "packagesPath": "C:\\Users\\Benja\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Benja\\Desktop\\CESI\\A3\\Projet dev\\Projet_Prog_System_A3\\Projet\\UnitTestProject1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Pitel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Benja\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5858,8 +5858,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Pitel\\Desktop\\CESI Exia\\A3\\Semestre 5\\Bloc 2 - Programmation\\Projet_Prog_System_A3\\Projet_Prog_System_A3\\Projet\\Metier\\Metier.csproj": {
-              "projectPath": "C:\\Users\\Pitel\\Desktop\\CESI Exia\\A3\\Semestre 5\\Bloc 2 - Programmation\\Projet_Prog_System_A3\\Projet_Prog_System_A3\\Projet\\Metier\\Metier.csproj"
+            "C:\\Users\\Benja\\Desktop\\CESI\\A3\\Projet dev\\Projet_Prog_System_A3\\Projet\\Metier\\Metier.csproj": {
+              "projectPath": "C:\\Users\\Benja\\Desktop\\CESI\\A3\\Projet dev\\Projet_Prog_System_A3\\Projet\\Metier\\Metier.csproj"
             }
           }
         }
