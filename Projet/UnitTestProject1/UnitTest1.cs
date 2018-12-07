@@ -61,5 +61,28 @@ namespace UnitTestProject1
       
             Assert.AreNotEqual(null, gc1.table);
         }
+
+        [TestMethod]
+        public void TestAttribuerCarte()
+        {
+            resto.groupeClientArrive(gc1);
+            resto.tick();
+            resto.groupeClientArrive(gc2);
+            resto.tick();
+            resto.tick();
+
+            Assert.AreEqual(EnumEtatTable.ONTCARTE, gc1.table.enumEtatTable);
+        }
+
+        public void TestPrendreCommande()
+        {
+            resto.groupeClientArrive(gc1);
+            resto.tick();
+            resto.groupeClientArrive(gc2);
+            resto.tick();
+           
+
+            Assert.AreEqual(EnumEtatTable.COMMANDEEMISE, gc1.table.enumEtatTable);
+        }
     }
 }

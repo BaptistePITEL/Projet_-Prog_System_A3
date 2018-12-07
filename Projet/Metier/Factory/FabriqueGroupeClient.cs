@@ -12,11 +12,10 @@ namespace Metier
         public GroupeClient create()
         {
             Random r = new Random();
-            int tailleGroupe = r.Next(1,10);
+            int tailleGroupe = r.Next(2,10);
 
             GroupeClient gC = new GroupeClient();
-
-
+            
             FabriqueClient fC = new FabriqueClient();
 
             for (int i = 1; i < tailleGroupe; i++)

@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace Metier
 {
-    public class EnumEtatTable
+    public enum EnumEtatTable
     {
-
+        INSTALLE, 
+        ONTCARTE,
+        PRETACOMMANDE,
+        COMMANDEEMISE,
+        ENATTENTE,
+        REPAS,
+        BESOINPAIN,
+        BESOINEAU
     }
 }

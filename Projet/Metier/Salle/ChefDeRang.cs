@@ -24,11 +24,14 @@ namespace Metier
 
         public override void tick()
         {
-           /* if(!this.table.ontCarte && !this.table.ontPrisCommande)
+            if (this.table != null)
             {
-                attribuerCarte();
+                if (this.table.enumEtatTable == EnumEtatTable.INSTALLE)
+                {
+                    attribuerCarte();
+                }
             }
-            else*/ if (this.gC != null)
+            else if (this.gC != null)
             {
                 attribuerTable();
             }
@@ -49,14 +52,20 @@ namespace Metier
         public void attribuerTable()
         {
             int quitter = 0;
-            
+
+            log("Nombre de rangs : " + carre.rangs.Count + "\n");
+
             foreach (Rang r in carre.rangs)
             {
+                int b = carre.rangs.IndexOf(r) + 1;
+                log("--------    RANG " + b + " :   --------"  );
+                log("Nombre de table dans le rang " + b + " : " + carre.rangs.Count + "\n");
                 foreach (Table t in r.tables)
                 {
-
-                    Console.WriteLine(gC.clients.Count + " "+ t.nbPlaces);
-                    if (gC.clients.Count <= t.nbPlaces )
+                    int a = r.tables.IndexOf(t) + 1;
+                    log("Table " + a + " : ");
+                    log("Nombre de client : " + gC.clients.Count + " / Nombre de places : "+ t.nbPlaces + "\n");
+                    if (t.nbPlaces - gC.clients.Count == 0 ||t.nbPlaces - gC.clients.Count == 1)
                     {
                         if (t.grclient == null)
                         {
@@ -64,6 +73,7 @@ namespace Metier
                             this.table = t;
                             t.grclient = gC;
                             this.gC = null;
+                            log("TABLE TROUVE \n");
                             quitter = 1;
                             break;
                         }
@@ -90,7 +100,11 @@ namespace Metier
                 {
                     if (t.Equals(this.table))
                     {
-                        t.ontCarte = true;
+                        t.enumEtatTable = EnumEtatTable.ONTCARTE;
+                        int a = r.tables.IndexOf(t) + 1;
+                        int b = carre.rangs.IndexOf(r) + 1;
+                        log("Carte apportée a la table " + a  + " du rang  " + b);
+                        this.table = null;
                         quitter = 1;
                         break;
                     }
@@ -104,28 +118,33 @@ namespace Metier
             }
         }
 
-
-        /*       public bool verifierTable(GroupeClient gC)
+        public void prendreCommande()
         {
-            
 
-            foreach(Rang r in carre.rangs)
+        }
+
+
+            /*       public bool verifierTable(GroupeClient gC)
             {
-                foreach(Table t in r.tables)
+
+
+                foreach(Rang r in carre.rangs)
                 {
-                    if(t.grclient == null)
+                    foreach(Table t in r.tables)
                     {
-                        this.table = t;
-                        t.grclient = gC;
-                        
-                        return true;
+                        if(t.grclient == null)
+                        {
+                            this.table = t;
+                            t.grclient = gC;
+
+                            return true;
+                        }
                     }
                 }
-            }
-            return false;     
-        }*/
+                return false;     
+            }*/
 
 
 
-    }
+        }
 }
