@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Metier.Cuisine
 {
-    public class Recette
+    class ChefDePartie
     {
-        public string categorie, titre, recette;
-        public int nbPers;
-        public float tempsPrepa, tempsCuisson, tempsRepos;
-
+        public string role;
     }
 }

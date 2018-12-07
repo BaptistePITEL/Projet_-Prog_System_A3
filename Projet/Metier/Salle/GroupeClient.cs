@@ -18,6 +18,14 @@ namespace Metier.Salle
             this.statut = false;
         }
 
+        public void tick()
+        {
+            foreach(Client client in clients)
+            {
+                client.tick();
+            }
+        }
+
 
     } 
 }

@@ -9,12 +9,13 @@ namespace Metier.Salle
     public enum EnumEtatTable
     {
         INSTALLE, 
-        ONTCARTE,
-        PRETACOMMANDE,
-        COMMANDEEMISE,
-        ENATTENTE,
+        ONT_CARTE,
+        PRET_A_COMMANDE,
+        PRET_A_COMMANDE_ATTENTE,
+        COMMANDE_EMISE,
+        EN_ATTENTE,
         REPAS,
-        BESOINPAIN,
-        BESOINEAU
+        BESOIN_PAIN,
+        BESOIN_EAU
     }
 }

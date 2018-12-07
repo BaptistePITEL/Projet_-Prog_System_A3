@@ -46,6 +46,7 @@
     <Compile Include="Builder\RestaurantEngineer.cs" />
     <Compile Include="Commande.cs" />
     <Compile Include="Cuisine\ChefDeCuisine.cs" />
+    <Compile Include="Cuisine\ChefDePartie.cs" />
     <Compile Include="Factory\FabriqueGroupeClient.cs" />
     <Compile Include="Cuisine\Recette.cs" />
     <Compile Include="Salle\EnumEtatTable.cs" />

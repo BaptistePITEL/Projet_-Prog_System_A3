@@ -24,11 +24,21 @@ namespace Metier
 
         public  void tick()
         {
+            log("------------------ DEBUT TICK ------------------");
             maitreHotel.tick();
             foreach(Carre c in carres)
             {
-                c.chefDeRang.tick();                
+                c.chefDeRang.tick();     
+                foreach(Rang r in c.rangs)
+                {
+                    foreach(Table t in r.tables)
+                    {
+                        if(t.grclient !=  null)
+                             t.grclient.tick();
+                    }
+                }
             }
+            log("------------------ FIN TICK ------------------");
         }
         public void tickFor(int x)
         {
@@ -45,5 +55,10 @@ namespace Metier
             this.maitreHotel = maitreHotel;
         }
 
+
+        public void log(string s)
+        {
+            Console.WriteLine(s);
+        }
     }
 }

@@ -39,7 +39,7 @@ namespace Metier.Cuisine
         {
             return false;
         }
-
+/*
         public void OrdonnerCommande()
         {
             foreach(Recette r in this.listCommandes.First().listRecettes)
@@ -54,6 +54,6 @@ namespace Metier.Cuisine
             }
             this.listCommandes.First().remove();
         }
-
+        */
     }
 }

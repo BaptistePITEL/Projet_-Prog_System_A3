@@ -72,20 +72,24 @@ namespace UnitTestProject1
             resto.tick();
             resto.groupeClientArrive(gc2);
             resto.tick();
-            resto.tick();
 
-            Assert.AreEqual(EnumEtatTable.ONTCARTE, gc1.table.enumEtatTable);
+            Assert.AreEqual(EnumEtatTable.ONT_CARTE, gc1.table.enumEtatTable);
         }
 
+        [TestMethod]
         public void TestPrendreCommande()
         {
             resto.groupeClientArrive(gc1);
             resto.tick();
             resto.groupeClientArrive(gc2);
             resto.tick();
-           
+            resto.tick();
+            resto.tick();
+            resto.tick();
+            resto.tick();
 
-            Assert.AreEqual(EnumEtatTable.COMMANDEEMISE, gc1.table.enumEtatTable);
+
+            Assert.AreEqual(EnumEtatTable.COMMANDE_EMISE, gc1.table.enumEtatTable);
         }
     }
 }

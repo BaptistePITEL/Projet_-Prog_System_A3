@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Metier
 {
-    class Commande
+    public class Commande
     {
         public int numTable;
         public List<Cuisine.Recette> listRecettes;
-        public Statut statutCommande;
+        //public Statut statutCommande;
     }
 }
