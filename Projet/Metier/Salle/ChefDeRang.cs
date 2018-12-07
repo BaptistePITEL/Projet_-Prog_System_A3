@@ -49,10 +49,13 @@ namespace Metier
         public void attribuerTable()
         {
             int quitter = 0;
+            
             foreach (Rang r in carre.rangs)
             {
                 foreach (Table t in r.tables)
                 {
+
+                    Console.WriteLine(gC.clients.Count + " "+ t.nbPlaces);
                     if (gC.clients.Count <= t.nbPlaces )
                     {
                         if (t.grclient == null)
@@ -62,7 +65,6 @@ namespace Metier
                             t.grclient = gC;
                             this.gC = null;
                             quitter = 1;
-                            Console.WriteLine(t.nbPlaces);
                             break;
                         }
                     }
@@ -75,7 +77,7 @@ namespace Metier
             }
             if (quitter == 0)
             {
-                log("Aucune table de disponible dans le carré" + carre.id);
+                log("Aucune table de disponible dans le carré " + carre.id);
             }
         }
         

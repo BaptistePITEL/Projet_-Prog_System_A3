@@ -10,9 +10,9 @@ namespace UnitTestProject1
         private Restaurant resto;
         private GroupeClient gc1;
         private GroupeClient gc2;
-        private Client clt1;
+      /*  private Client clt1;
         private Client clt2;
-
+        */
 
 
         [TestInitialize]
@@ -27,7 +27,7 @@ namespace UnitTestProject1
             restaurantEngineer.makeRestaurant(2, 6, 3, 5, list, "Gontrand");
             resto = restaurantEngineer.getRestaurant();
 
-            gc1 = new GroupeClient();
+           /* gc1 = new GroupeClient();
             gc2 = new GroupeClient();
 
             FabriqueClient fabriqueClient = new FabriqueClient();
@@ -42,7 +42,12 @@ namespace UnitTestProject1
             {
                 gc2.clients.Add(fabriqueClient.create(gc2));
 
-            }
+            }*/
+
+            FabriqueGroupeClient fC = new FabriqueGroupeClient();
+
+            gc1 = fC.create();
+            gc2 = fC.create();
         }      
 
         [TestMethod]
@@ -50,6 +55,7 @@ namespace UnitTestProject1
         {
             resto.groupeClientArrive(gc1);
 
+            resto.tick();
             resto.groupeClientArrive(gc2);
             resto.tick();
       

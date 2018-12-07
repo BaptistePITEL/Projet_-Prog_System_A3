@@ -18,6 +18,8 @@ namespace Metier
 
         public void buildCarres(int nbCarre, int nbRangsParCarre, int nbTablesParRang,int tailleTable, List<string> chefs)
         {
+            List<int> list = new List<int> { 2, 4, 6, 8, 10 };
+
             Random rnd = new Random();
             for (int i = 0; i < nbCarre; i++)
             {
@@ -28,7 +30,7 @@ namespace Metier
                     restaurant.carres[i].rangs.Add(new Rang());
                     for (int k = 0; k < nbTablesParRang; k++)
                     {
-                        restaurant.carres[i].rangs[j].tables.Add(new Table(rnd.Next(2,5)));
+                        restaurant.carres[i].rangs[j].tables.Add(new Table(list[rnd.Next(0,list.Count-1)]));
                     }
                 }
             }
