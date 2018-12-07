@@ -45,10 +45,12 @@
     <Compile Include="Builder\RestaurantBuilder.cs" />
     <Compile Include="Builder\RestaurantEngineer.cs" />
     <Compile Include="Commande.cs" />
+    <Compile Include="ConnectionBD.cs" />
     <Compile Include="Cuisine\ChefDeCuisine.cs" />
     <Compile Include="Cuisine\ChefDePartie.cs" />
     <Compile Include="Factory\FabriqueGroupeClient.cs" />
     <Compile Include="Cuisine\Recette.cs" />
+    <Compile Include="Factory\FabriqueRecette.cs" />
     <Compile Include="Salle\EnumEtatTable.cs" />
     <Compile Include="Factory\FabriqueClient.cs" />
     <Compile Include="Salle\CommisSalle.cs" />
