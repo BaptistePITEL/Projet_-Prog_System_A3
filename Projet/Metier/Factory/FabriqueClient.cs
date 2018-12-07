@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Metier.Salle;
 
-namespace Metier
+namespace Metier.Factory
 {
    public  class FabriqueClient
     {

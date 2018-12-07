@@ -1,4 +1,7 @@
 using Metier;
+using Metier.Salle;
+using Metier.Builder;
+using Metier.Factory;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 

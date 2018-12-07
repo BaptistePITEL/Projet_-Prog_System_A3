@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Metier;
+using Metier.Salle;
+using Metier.Cuisine;
 
-namespace Metier
+
+namespace Metier.Builder
 {
     public class RestaurantBuilder : GeneralRestaurantBuilder
     {

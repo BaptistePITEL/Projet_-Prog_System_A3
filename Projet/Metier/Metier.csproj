@@ -44,8 +44,10 @@
     <Compile Include="Builder\GeneralRestaurantBuilder.cs" />
     <Compile Include="Builder\RestaurantBuilder.cs" />
     <Compile Include="Builder\RestaurantEngineer.cs" />
+    <Compile Include="Commande.cs" />
     <Compile Include="Cuisine\ChefDeCuisine.cs" />
     <Compile Include="Factory\FabriqueGroupeClient.cs" />
+    <Compile Include="Cuisine\Recette.cs" />
     <Compile Include="Salle\EnumEtatTable.cs" />
     <Compile Include="Factory\FabriqueClient.cs" />
     <Compile Include="Salle\CommisSalle.cs" />
@@ -57,7 +59,7 @@
     <Compile Include="Restaurant.cs" />
     <Compile Include="Salle\MaitreHotel.cs" />
     <Compile Include="Salle\Client.cs" />
-    <Compile Include="Salle\Personnel.cs" />
+    <Compile Include="Personnel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Salle\Table.cs" />
     <Compile Include="Salle\Serveur.cs" />
