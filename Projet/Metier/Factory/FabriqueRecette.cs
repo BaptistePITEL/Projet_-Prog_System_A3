@@ -3,49 +3,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Metier.Cuisine;
+using Metier;
+using System.Data;
 
 namespace Metier.Factory
 {
     class FabriqueRecette
     {
-        public FabriqueRecette create(int type)
+        public ConnexionBD connexionBD;
+        public DataTable d1;
+        public List<DataRow> list;
+
+        public void create(int type)
         {
             Random r = new Random();
-            int tailleGroupe = r.Next(1, 10);
+            int i = r.Next(1, 10);
 
-            if (type == 1)
+            list = new List<DataRow>();
+
+            connexionBD = new ConnexionBD();
+
+            d1 = connexionBD.execQuery(SelectRecette(type));
+            foreach (DataRow r1 in d1.Rows)
             {
-                if( i == 1)
-                {
-
-                }
-                else if (i == 2)
-                {
-                    return new Client(groupeClient, "Maria Garcia");
-                }
-                else if (i == 3)
-                {
-                    return new Client(groupeClient, "Clay Robinson");
-                }
-                else if (i == 4)
-                {
-                    return new Client(groupeClient, "Chris Brantley");
-                }
-
+                list.Add(r1);
             }
+
+
+  
             
-
-            GroupeClient gC = new GroupeClient();
-
-            FabriqueClient fC = new FabriqueClient();
-
-            for (int i = 1; i < tailleGroupe; i++)
-            {
-                Client clt = fC.create(gC);
-                gC.clients.Add(clt);
-            }
-
-            return gC;
         }
+
+        public string SelectRecette(int type)
+        {
+            return "SELECT CTG_NOM_CATEGORIE_RECETTE, R_NOM_RECETTE, R_DESC_RECETTE, R_NBR_PERS_RECETTE,R_TPSPREP_RECETTE, R_TPSCUISSON_RECETTE, R_TPSREPOS_RECETTE FROM RECETTE r, CATEGORIE_RECETTE c WHERE r.CTG_ID == c.CTG_ID AND r.CTG_ID ='" + type +"'";
+        }
+
+      
     }
 }

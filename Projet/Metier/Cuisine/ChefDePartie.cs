@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Metier.Cuisine
 {
-<<<<<<< HEAD
     public class ChefDePartie : Personnel
     {
         public Queue<Recette> recettes;
@@ -20,7 +19,7 @@ namespace Metier.Cuisine
 
         public void PreparerRecette()
         {
-            foreach(Recette r in recettes)
+            foreach (Recette r in recettes)
             {
                 //Attendre tps preparation + cuisson + repos
                 //servir plat
@@ -36,10 +35,6 @@ namespace Metier.Cuisine
         {
             throw new NotImplementedException();
         }
-=======
-    class ChefDePartie
-    {
-        public string role;
->>>>>>> 7ba5f6fdb273af4a66433cb12a1d7ede5df77e55
     }
+
 }
