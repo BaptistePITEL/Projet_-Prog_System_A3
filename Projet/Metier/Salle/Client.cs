@@ -23,9 +23,9 @@ namespace Metier.Salle
             this.groupeClient = groupeClient;
         }
 
-        public override void log(string log)
+        public override Restaurant getRestaurant()
         {
-            Console.WriteLine(log);
+            return groupeClient.table.rang.Carre.resto;
         }
 
         public override void tick()
@@ -33,13 +33,15 @@ namespace Metier.Salle
             compteur += 1;
             if (groupeClient.table.enumEtatTable == EnumEtatTable.ONT_CARTE && compteur == 5)
             {
-                this.entree = fR.create(1);
-                this.plat = fR.create(2);
-                this.dessert = fR.create(3);
-              
-                    
-                groupeClient.table.enumEtatTable = EnumEtatTable.PRET_A_COMMANDE;
-                log("Table pret à commander, " + compteur );
+                this.entree = fR.create(1, groupeClient.table);
+                this.plat = fR.create(2, groupeClient.table);
+                this.dessert = fR.create(3, groupeClient.table);
+
+
+
+                groupeClient.checkToutLeMondePret();
+                    //table.enumEtatTable = EnumEtatTable.PRET_A_COMMANDE;
+                log(nom+" prêt a commander, " + compteur );
             }
         }
     }

@@ -9,6 +9,7 @@ namespace Metier.Salle
    public  class Rang
     {
         public List<Table> tables;
+        public Carre Carre { get; set; }
 
         public Rang()
         {

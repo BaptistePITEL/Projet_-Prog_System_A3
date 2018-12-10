@@ -12,6 +12,8 @@ namespace Metier.Builder
 
         void buildCarres(int nbCarre, int nbRangsParCarre, int nbTablesParRang, int tailleTable, List<string> chefs);
 
+        void buildChefDeCuisine(string nomChefdeCuisine);
+
         Restaurant getRestaurant();
     }
 }

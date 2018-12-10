@@ -32,3 +32,4 @@ C:\Users\Pitel\Desktop\CESI Exia\A3\Semestre 5\Bloc 2 - Programmation\Projet_Pro
 C:\Users\Pitel\Desktop\CESI Exia\A3\Semestre 5\Bloc 2 - Programmation\Projet_Prog_System_A3\Projet_Prog_System_A3\Projet\UnitTestProject1\bin\Debug\netcoreapp2.1\Metier.dll
 C:\Users\Pitel\Desktop\CESI Exia\A3\Semestre 5\Bloc 2 - Programmation\Projet_Prog_System_A3\Projet_Prog_System_A3\Projet\UnitTestProject1\bin\Debug\netcoreapp2.1\Metier.pdb
 C:\Users\Pitel\Desktop\CESI Exia\A3\Semestre 5\Bloc 2 - Programmation\Projet_Prog_System_A3\Projet_Prog_System_A3\Projet\UnitTestProject1\obj\Debug\netcoreapp2.1\UnitTestProject1.csproj.CopyComplete
+C:\Users\Pitel\Desktop\CESI Exia\A3\Semestre 5\Bloc 2 - Programmation\Projet_Prog_System_A3\Projet_Prog_System_A3\Projet\UnitTestProject1\bin\Debug\netcoreapp2.1\Metier.dll.config

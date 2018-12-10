@@ -14,12 +14,10 @@ namespace Metier.Salle
         {
             this.resto = resto;
         }
-        
 
-
-        public override void log(string log)
+        public override Restaurant getRestaurant()
         {
-            Console.WriteLine(log);
+            return resto;
         }
 
         public override void tick()

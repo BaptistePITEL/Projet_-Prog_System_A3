@@ -12,6 +12,7 @@ namespace Metier.Salle
         public int nbPlaces;
         public GroupeClient grclient;
         public EnumEtatTable enumEtatTable;
+        public Rang rang { get; set; }
 
         public Table(int nb )
         {

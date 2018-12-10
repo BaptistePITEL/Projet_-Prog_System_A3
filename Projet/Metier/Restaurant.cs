@@ -15,18 +15,27 @@ namespace Metier
     {
         
         public MaitreHotel maitreHotel;
+        public ChefDeCuisine chefDeCuisine;
+
         public List<GroupeClient> listAttente;
         public List<Carre> carres;
+
+        public List<Recette> recettesAServir;
+        public Queue<Commande> commandesEnAttente;
+
+        public int nbTick { get; set; }
 
         public Restaurant()
         {
             this.listAttente = new List<GroupeClient>();
             this.carres = new List<Carre>();
-            
+            this.recettesAServir = new List<Recette>();
+            this.commandesEnAttente = new Queue<Commande>();
         }
 
         public  void tick()
         {
+            nbTick++;
             log("------------------ DEBUT TICK ------------------");
             maitreHotel.tick();
             foreach(Carre c in carres)
@@ -40,12 +49,20 @@ namespace Metier
                              t.grclient.tick();
                     }
                 }
+                chefDeCuisine.tick();
+                foreach(ChefDePartie chef in chefDeCuisine.chefParties)
+                {
+                    chef.tick();
+                }
             }
             log("------------------ FIN TICK ------------------");
         }
         public void tickFor(int x)
         {
-            
+            for(int i = 0; i<x; i++)
+            {
+                tick();
+            }
         }
 
         public void groupeClientArrive(GroupeClient gc)
@@ -58,14 +75,15 @@ namespace Metier
             this.maitreHotel = maitreHotel;
         }
 
-        public void log(string s)
+        public void addChefDeCuisine(ChefDeCuisine chef)
         {
-            Console.WriteLine(s);
+            this.chefDeCuisine = chef;
         }
 
-        static void CurrentDomain_ProcessExit(object sender, EventArgs e)
+        public void log(string s)
         {
-            Console.WriteLine("exit");
+            System.Diagnostics.Debug.WriteLine(s);
         }
+
     }
 }

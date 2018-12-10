@@ -27,14 +27,21 @@ namespace Metier.Builder
             Random rnd = new Random();
             for (int i = 0; i < nbCarre; i++)
             {
-                restaurant.carres.Add(new Carre());
-                restaurant.carres[i].chefDeRang = new ChefDeRang(restaurant.carres[i], chefs[i]);
+                var carre = new Carre();
+                carre.resto = restaurant;
+                restaurant.carres.Add(carre);
+                restaurant.carres[i].chefDeRang = new ChefDeRang(this.restaurant,restaurant.carres[i], chefs[i]);
                 for (int j = 0; j < nbRangsParCarre; j++)
                 {
-                    restaurant.carres[i].rangs.Add(new Rang());
+
+                    var r = new Rang();
+                    r.Carre = restaurant.carres[i];
+                    restaurant.carres[i].rangs.Add(r);
                     for (int k = 0; k < nbTablesParRang; k++)
                     {
-                        restaurant.carres[i].rangs[j].tables.Add(new Table(list[rnd.Next(0,list.Count-1)]));
+                        var table = new Table(list[rnd.Next(0, list.Count - 1)]);
+                        table.rang = r;
+                        restaurant.carres[i].rangs[j].tables.Add(table);
                     }
                 }
             }
@@ -43,6 +50,15 @@ namespace Metier.Builder
         public void buildMaitreHotel(string nomMaitreHotel)
         {
             restaurant.addMaitreHotel(new MaitreHotel(restaurant,nomMaitreHotel));
+        }
+
+        public void buildChefDeCuisine(string nomChefDeCuisine)
+        {
+            ChefDeCuisine chefDeCuisine = new ChefDeCuisine(restaurant, nomChefDeCuisine);
+            chefDeCuisine.chefParties = new List<ChefDePartie>();
+            chefDeCuisine.chefParties.Add(new ChefDePartie("Antoine", restaurant, new List<string>() {"Desserts", "Plat"}));
+            chefDeCuisine.chefParties.Add(new ChefDePartie("Cyrille", restaurant, new List<string>() { "Entrées", "Plat" }));
+            restaurant.addChefDeCuisine(chefDeCuisine);
         }
 
         public Restaurant getRestaurant()

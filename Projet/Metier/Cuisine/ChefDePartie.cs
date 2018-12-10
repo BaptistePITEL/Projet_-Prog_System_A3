@@ -9,13 +9,22 @@ namespace Metier.Cuisine
 {
     public class ChefDePartie : Personnel
     {
-        public Queue<Recette> recettes;
-        public string role;
+        public List<Recette> recettes;
+        public List<string> roles;
+        public Restaurant restaurant;
+        public int compteurPrepa = 0;
 
-
-        public ChefDePartie(string nom) : base(nom)
+        public ChefDePartie(string nom, Restaurant r, List<string> roles) : base(nom)
         {
-            this.recettes = new Queue<Recette>();
+            this.recettes = new List<Recette>();
+            this.restaurant = r;
+            this.roles = roles;
+
+        }
+
+        public override Restaurant getRestaurant()
+        {
+            return restaurant;
         }
 
         public void PreparerRecette()
@@ -23,18 +32,23 @@ namespace Metier.Cuisine
             foreach (Recette r in recettes)
             {
                 //Attendre tps preparation + cuisson + repos
-                //servir plat
+                this.restaurant.recettesAServir.Add(r);
             }
-        }
-
-        public override void log(string log)
-        {
-            throw new NotImplementedException();
         }
 
         public override void tick()
         {
-            throw new NotImplementedException();
+            if(recettes.Count != 0)
+            {
+                compteurPrepa += 1;
+                if (compteurPrepa == 100)
+                {
+                    log("Plat préparé");
+                    compteurPrepa = 0;
+                    recettes[0].etat = true;
+                }
+            }
+            
         }
     }
 

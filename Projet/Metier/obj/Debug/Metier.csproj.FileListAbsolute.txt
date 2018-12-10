@@ -12,3 +12,4 @@ C:\Users\Pitel\Desktop\CESI Exia\A3\Semestre 5\Bloc 2 - Programmation\Projet_Pro
 C:\Users\Pitel\Desktop\CESI Exia\A3\Semestre 5\Bloc 2 - Programmation\Projet_Prog_System_A3\Projet_Prog_System_A3\Projet\Metier\bin\Debug\System.Data.SqlClient.dll
 C:\Users\Pitel\Desktop\CESI Exia\A3\Semestre 5\Bloc 2 - Programmation\Projet_Prog_System_A3\Projet_Prog_System_A3\Projet\Metier\obj\Debug\Metier.csproj.CopyComplete
 C:\Users\Pitel\Desktop\CESI Exia\A3\Semestre 5\Bloc 2 - Programmation\Projet_Prog_System_A3\Projet_Prog_System_A3\Projet\Metier\bin\Debug\Metier.dll.config
+C:\Users\Pitel\Desktop\CESI Exia\A3\Semestre 5\Bloc 2 - Programmation\Projet_Prog_System_A3\Projet_Prog_System_A3\Projet\Metier\obj\Debug\Metier.csprojAssemblyReference.cache

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Metier.Salle;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,14 +9,14 @@ namespace Metier
 {
     public class Commande
     {
-        public int numTable;
+        public Table table;
 
         public List<Cuisine.Recette> recettes;
         public StatutCommande statutCommande;
 
-        public Commande(int numTable)
+        public Commande(Table t)
         {
-            this.numTable = numTable;
+            this.table = t;
             this.statutCommande = StatutCommande.ATTENTE;
             this.recettes = new List<Cuisine.Recette>();
         }

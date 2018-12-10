@@ -48,6 +48,8 @@
     <Compile Include="Builder\RestaurantBuilder.cs" />
     <Compile Include="Builder\RestaurantEngineer.cs" />
     <Compile Include="Commande.cs" />
+    <Compile Include="Compteur.cs" />
+    <Compile Include="Comptoir.cs" />
     <Compile Include="ConnexionBD.cs" />
     <Compile Include="Cuisine\ChefDeCuisine.cs" />
     <Compile Include="Cuisine\ChefDePartie.cs" />

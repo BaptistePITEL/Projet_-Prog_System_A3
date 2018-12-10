@@ -26,6 +26,14 @@ namespace Metier.Salle
             }
         }
 
-
+        internal void checkToutLeMondePret()
+        {
+            foreach (var client in clients)
+            {
+                if (client.dessert == null)
+                    return;
+            }
+            table.enumEtatTable = EnumEtatTable.PRET_A_COMMANDE;
+        }
     } 
 }

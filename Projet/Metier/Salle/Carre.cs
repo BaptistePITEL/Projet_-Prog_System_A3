@@ -12,6 +12,7 @@ namespace Metier.Salle
         public ChefDeRang chefDeRang;
         public static int numero = 0;
         public int id;
+        public Restaurant resto { get; set; }
 
         public Carre()
         {

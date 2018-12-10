@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Metier;
 
+
 namespace Metier.Salle
 {
     public class ChefDeRang : Personnel
@@ -12,23 +13,28 @@ namespace Metier.Salle
         public Carre carre;
         public GroupeClient gC;
         public Table table;
-        public Commande commande;
         public Queue<Table> tablesPretaCommander;
+        public Restaurant resto;
+        public int compteurCommande = 0;
+        public int compteurTable = 0;
+        public int compteurCarte = 0;
 
-
-        public ChefDeRang(Carre carre, string nom) : base(nom)
+        public ChefDeRang(Restaurant resto, Carre carre, string nom) : base(nom)
         {
+            this.resto = resto;
             this.carre = carre;
             tablesPretaCommander = new Queue<Table>();
         }
 
-        public override void log(string log)
+        public override Restaurant getRestaurant()
         {
-            Console.WriteLine(log);
+            return resto;
         }
 
         public override void tick()
         {
+
+
             foreach (Rang r in carre.rangs)
             {
                 foreach (Table t in r.tables)
@@ -45,21 +51,38 @@ namespace Metier.Salle
 
             if (tablesPretaCommander.Count != 0)
             {
-                prendreCommande(tablesPretaCommander.Dequeue());
+                compteurCommande += 1;
+                if (compteurCommande == 10)
+                {
+                    prendreCommande(tablesPretaCommander.Dequeue());
+                    compteurCommande = 0;
+                }
+
             }
             else if (this.table != null)
             {
-                    if (this.table.enumEtatTable == EnumEtatTable.INSTALLE)
+                if (this.table.enumEtatTable == EnumEtatTable.INSTALLE)
+                {
+                    compteurCarte += 1;
+                    if (compteurCarte == 2)
                     {
                         attribuerCarte();
-                  }
+                        compteurCarte = 0;
+                    }
+
+                }
             }
             else if (this.gC != null)
             {
+                compteurTable += 1;
+                if (compteurTable == 10)
+                {
                     attribuerTable();
+                    compteurTable = 0;
+                }
             }
-            
-           
+
+
         }
 
         public bool isDispo()
@@ -145,20 +168,27 @@ namespace Metier.Salle
 
         public void prendreCommande(Table t)
         {
-            foreach(Client client in t.grclient.clients)
+            log("" + t.grclient.clients.Count);
+
+            Commande commande = new Commande(t);
+
+            foreach (Client client in t.grclient.clients)
             {
-                commande = new Commande(t);
+
 
                 commande.recettes.Add(client.entree);
 
                 commande.recettes.Add(client.plat);
 
                 commande.recettes.Add(client.dessert);
+
+
             }
 
+            resto.commandesEnAttente.Enqueue(commande);
             t.enumEtatTable = EnumEtatTable.COMMANDE_EMISE;
 
-            log("Commande prise sur la table");
+            log("Commande prise sur la table "+commande.recettes.Count);
 
         }
 

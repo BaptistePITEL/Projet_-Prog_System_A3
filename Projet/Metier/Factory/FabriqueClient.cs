@@ -7,12 +7,23 @@ using Metier.Salle;
 
 namespace Metier.Factory
 {
-   public  class FabriqueClient
+    public class FabriqueClient
     {
+        static List<String> noms = new List<string>()
+                {
+                    "John Doe",
+                     "Maria Garcia",
+                    "Clay Robinson"
+                };
+
         public Client create(GroupeClient groupeClient)
         {
             Random r = new Random();
-            int i = r.Next(11);
+            int i = r.Next(noms.Count);
+
+
+            return new Client(groupeClient, noms[i]);
+            /*
             if (i == 1)
             {
                 return new Client(groupeClient, "John Doe");
@@ -56,7 +67,7 @@ namespace Metier.Factory
             else
             {
                 return new Client(groupeClient, "Chelsea Rice");
-            }
+            }*/
         }
     }
 

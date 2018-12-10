@@ -12,51 +12,81 @@ namespace Metier.Cuisine
     {
         public Queue<Commande> commandes;
         public List<ChefDePartie> chefParties;
-        
-        public ChefDeCuisine(string nom) : base(nom)
+        public Restaurant resto;
+
+        public int compteur = 0;
+
+
+        public ChefDeCuisine(Restaurant r, string nom) : base(nom)
         {
             this.commandes = new Queue<Commande>();
-            this.chefParties = new List<ChefDePartie>();
+            this.resto = r;
+
         }
 
-        public override void log(string log)
+        public override Restaurant getRestaurant()
         {
-            throw new NotImplementedException();
+            return resto;
         }
 
         public override void tick()
         {
-            throw new NotImplementedException();
+
+            if (resto.commandesEnAttente.Count != 0)
+            {
+                compteur += 1;
+                if (compteur == 5)
+                {
+                    log("Prépa commence");
+                    recevoirCommande(resto.commandesEnAttente.Dequeue());
+                    ordonnerCommande();
+                    compteur = 0;
+
+                }
+            }
+
+
+
         }
 
 
-    public void RecevoirCommande(Commande c)
+        public void recevoirCommande(Commande c)
         {
             this.commandes.Enqueue(c);
         }
-        
-        public bool RecetteDisponible(Recette r)
+
+
+        public void ordonnerCommande()
         {
-            return true;
-        }
-        public void OrdonnerCommande()
-        {
-            for (int i = 0; i < this.commandes.Count; i++) 
+
+            while (this.commandes.Count > 0)
             {
                 Commande c = this.commandes.Dequeue();
-                foreach(Recette r in c.recettes)
+
+                log("Nb recette " + c.recettes.Count);
+                foreach (var rct in c.recettes)
                 {
-                    r.numTable = c.numTable;
-                    foreach (ChefDePartie cp in this.chefParties)
+                    log("Recette " + rct.titre);
+                }
+
+
+                foreach (Recette r in c.recettes)
+                {
+
+                    log(r.categorie);
+
+                    foreach (ChefDePartie cp in chefParties)
                     {
-                        if (cp.role.Equals(r.categorie))
+                        if (cp.roles.Contains(r.categorie))
                         {
-                            cp.recettes.Enqueue(r);
+                            cp.recettes.Add(r);
+                            break;
                         }
                     }
                 }
-                
             }
+
+
         }
     }
 }

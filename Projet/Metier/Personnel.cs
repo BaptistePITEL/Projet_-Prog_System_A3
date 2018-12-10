@@ -8,14 +8,20 @@ namespace Metier
 {
     public abstract class Personnel
     {
-        private string nom;
+        public string nom;
 
         public Personnel(string nom)
         {
             this.nom = nom;
         }
 
-        public abstract void log(string log);
+        public void log(string log)
+        {
+            System.Diagnostics.Debug.WriteLine("[" + nom + "](" + getRestaurant().nbTick + ") " + log);
+        }
+
+        public abstract Restaurant getRestaurant();
+
         public abstract void tick();
     }
 }
