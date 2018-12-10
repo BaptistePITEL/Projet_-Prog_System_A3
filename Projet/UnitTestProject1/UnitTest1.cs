@@ -93,5 +93,23 @@ namespace UnitTestProject1
 
             Assert.AreEqual(EnumEtatTable.COMMANDE_EMISE, gc1.table.enumEtatTable);
         }
+
+        [TestMethod]
+        public void TestClientChoixRecette()
+        {
+            resto.groupeClientArrive(gc1);
+            resto.tick();
+            resto.groupeClientArrive(gc2);
+            resto.tick();
+            resto.tick();
+            resto.tick();
+            resto.tick();
+            resto.tick();
+            resto.tick();
+            resto.tick();
+
+
+            Assert.AreNotEqual(gc1.clients[0].entree, null);
+        }
     }
 }

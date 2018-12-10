@@ -41,7 +41,7 @@ namespace Metier.Cuisine
         }
         public void OrdonnerCommande()
         {
-            for (int i = 0; i < this.commandes.Count; i++) ;
+            for (int i = 0; i < this.commandes.Count; i++) 
             {
                 Commande c = this.commandes.Dequeue();
                 foreach(Recette r in c.recettes)

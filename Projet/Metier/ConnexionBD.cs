@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace Metier
 {
-    public  class ConnexionBD
+    public class ConnexionBD
     {
-        private  String cnx;
-        private  SqlConnection objetConnexion;
+        private String cnx;
+        private SqlConnection objetConnexion;
 
-        public  ConnexionBD()
+        public ConnexionBD()
         {
             this.cnx = "Data Source=localhost,1434;Initial Catalog=Projet;User ID=SA;Password=C8v5upzw";
             this.objetConnexion = new SqlConnection(this.cnx);
@@ -22,7 +22,7 @@ namespace Metier
 
         public DataTable execQuery(string v)
         {
-            SqlCommand cmd = new SqlCommand(v, this.objetConnexion);       
+            SqlCommand cmd = new SqlCommand(v, this.objetConnexion);
             DataTable d1 = new DataTable();
             d1.Load(cmd.ExecuteReader());
             return d1;
@@ -57,7 +57,7 @@ namespace Metier
     }
 }
 
-       
 
 
-        
+
+

@@ -32,14 +32,15 @@ namespace Metier.Salle
         {
             compteur += 1;
             if (groupeClient.table.enumEtatTable == EnumEtatTable.ONT_CARTE && compteur == 5)
-                 {
-                        int a = 1;
-                        fR.create(a);
-
+            {
+                this.entree = fR.create(1);
+                this.plat = fR.create(2);
+                this.dessert = fR.create(3);
+              
                     
-                     groupeClient.table.enumEtatTable = EnumEtatTable.PRET_A_COMMANDE;
-                     log("Table pret à commander, " + compteur );
-                 }
+                groupeClient.table.enumEtatTable = EnumEtatTable.PRET_A_COMMANDE;
+                log("Table pret à commander, " + compteur );
+            }
         }
     }
 }

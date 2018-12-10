@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Metier.Salle;
 using Metier.Cuisine;
+using static Metier.ConnexionBD;
 
 namespace Metier
 {
@@ -14,15 +17,12 @@ namespace Metier
         public MaitreHotel maitreHotel;
         public List<GroupeClient> listAttente;
         public List<Carre> carres;
-        public static ConnexionBD connexionBD; 
 
         public Restaurant()
         {
             this.listAttente = new List<GroupeClient>();
             this.carres = new List<Carre>();
-            connexionBD = new ConnexionBD();
-
-            AppDomain.CurrentDomain.ProcessExit += new EventHandler(CurrentDomain_ProcessExit);
+            
         }
 
         public  void tick()
@@ -66,7 +66,6 @@ namespace Metier
         static void CurrentDomain_ProcessExit(object sender, EventArgs e)
         {
             Console.WriteLine("exit");
-            connexionBD.close();
         }
     }
 }

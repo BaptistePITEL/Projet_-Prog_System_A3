@@ -12,14 +12,13 @@ namespace Metier.Salle
         public Carre carre;
         public GroupeClient gC;
         public Table table;
-        public List<Commande> commandes;
+        public Commande commande;
         public Queue<Table> tablesPretaCommander;
 
 
         public ChefDeRang(Carre carre, string nom) : base(nom)
         {
             this.carre = carre;
-            commandes = new List<Commande>();
             tablesPretaCommander = new Queue<Table>();
         }
 
@@ -146,7 +145,21 @@ namespace Metier.Salle
 
         public void prendreCommande(Table t)
         {
-            t.enumEtatTable = EnumEtatTable.COMMANDE_EMISE;           
+            foreach(Client client in t.grclient.clients)
+            {
+                commande = new Commande(t);
+
+                commande.recettes.Add(client.entree);
+
+                commande.recettes.Add(client.plat);
+
+                commande.recettes.Add(client.dessert);
+            }
+
+            t.enumEtatTable = EnumEtatTable.COMMANDE_EMISE;
+
+            log("Commande prise sur la table");
+
         }
 
         /*       public bool verifierTable(GroupeClient gC)

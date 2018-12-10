@@ -14,30 +14,81 @@ namespace Metier.Factory
         public DataTable d1;
         public List<DataRow> list;
 
-        public void create(int type)
+        public Recette create(int type)
         {
             Random r = new Random();
             int i = r.Next(1, 10);
 
-            list = new List<DataRow>();
-
-
-            d1 = Restaurant.connexionBD.execQuery(SelectRecette(type));
-            foreach (DataRow r1 in d1.Rows)
+            if (type == 1)
             {
-                list.Add(r1);
-                Console.WriteLine(r1.ToString());
+                if (i == 1)
+                {
+                    return new Recette("Entrées", "Feuilleté au crabe", 10, 20, 0);
+                }
+                else if (i == 2)
+                {
+                    return new Recette("Entrées", "Oeuf cocotte", 10, 5, 0);
+                }
+                else if (i == 3)
+                {
+                    return new Recette("Entrées", "Foie gras à la vapeur", 60, 4, 1440);
+                }
+                else if (i == 4)
+                {
+                    return new Recette("Entrées", "Tarte au thon", 10, 20, 0);
+                }
+                else
+                {
+                    return new Recette("Entrées", "Soupe chinoise", 15, 30, 0);
+                }                
             }
+            else if (type == 2)
+            {
+                if (i == 1)
+                {
+                    return new Recette("Plat", "Bouillinade d'anguilles ou de poissons", 10, 20, 0);
+                }
+                else if (i == 2)
+                {
+                    return new Recette("Plat", "Boles de picoulats", 60, 0, 0);
+                }
+                else if (i == 3)
+                {
+                    return new Recette("Plat", "Blanquette de veau", 60, 120, 0);
+                }
+                else if (i == 4)
+                {
+                    return new Recette("Plat", "Pate de porc", 30, 180, 0);
+                }
+                else
+                {
+                    return new Recette("Plat", "Blanc de poulet a la creme et au miel", 5, 10, 0);
+                }
+            }
+            else 
+            {
+                {
+                    if (i == 1)
+                    {
+                        return new Recette("Desserts", "Gaufres", 10, 120, 0);
+                    }
+                    else if (i == 2)
+                    {
+                        return new Recette("Desserts", "Crêpes", 60, 0, 60);
+                    }
+                    else if (i == 3)
+                    {
+                        return new Recette("Desserts", "Tiramusi", 60, 0, 60);
+                    }
+                    else 
+                    {
+                        return new Recette("Desserts", "Madeleine au miel", 15, 5, 0);
+                    }
+                }
 
-            
-  
-            
         }
+            
 
-        public string SelectRecette(int type)
-        {
-            return "SELECT CTG_NOM_CATEGORIE_RECETTE, R_NOM_RECETTE, R_DESC_RECETTE, R_NBR_PERS_RECETTE,R_TPSPREP_RECETTE, R_TPSCUISSON_RECETTE, R_TPSREPOS_RECETTE FROM RECETTE r, CATEGORIE_RECETTE c WHERE r.CTG_ID == c.CTG_ID AND r.CTG_ID ='" + type +"'";
-        }
 
       
     }
