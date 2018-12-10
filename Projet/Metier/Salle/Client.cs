@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using Metier.Cuisine;
+using Metier.Factory;
 
 namespace Metier.Salle
 {
@@ -15,6 +16,7 @@ namespace Metier.Salle
         public Recette plat;
         public Recette dessert;
         public int compteur = 0;
+        public FabriqueRecette fR = new FabriqueRecette();
 
         public Client(GroupeClient groupeClient, string nom) : base(nom)
         {
@@ -30,8 +32,10 @@ namespace Metier.Salle
         {
             compteur += 1;
             if (groupeClient.table.enumEtatTable == EnumEtatTable.ONT_CARTE && compteur == 5)
-                 {  
-                    
+                 {
+                        int a = 1;
+                        fR.create(a);
+
                     
                      groupeClient.table.enumEtatTable = EnumEtatTable.PRET_A_COMMANDE;
                      log("Table pret à commander, " + compteur );

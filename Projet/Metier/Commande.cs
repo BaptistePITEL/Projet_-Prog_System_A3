@@ -11,16 +11,15 @@ namespace Metier
         public int numTable;
 
         public List<Cuisine.Recette> recettes;
-        //public StatutCommande statutCommande;
+        public StatutCommande statutCommande;
 
         public Commande(int numTable)
         {
             this.numTable = numTable;
-           // this.statutCommande = StatutCommande.ATTENTE;
+            this.statutCommande = StatutCommande.ATTENTE;
             this.recettes = new List<Cuisine.Recette>();
         }
 
-        public List<Cuisine.Recette> listRecettes;
-        //public Statut statutCommande;
+       
     }
 }

@@ -66,10 +66,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Salle\Table.cs" />
     <Compile Include="Salle\Serveur.cs" />
+    <Compile Include="StatutCommande.cs" />
     <Compile Include="Strategy\GroupeClientTypeA.cs" />
     <Compile Include="Strategy\GroupeClientTypeB.cs" />
     <Compile Include="Strategy\StrategyGroupeClient.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

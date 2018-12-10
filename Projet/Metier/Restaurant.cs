@@ -14,12 +14,15 @@ namespace Metier
         public MaitreHotel maitreHotel;
         public List<GroupeClient> listAttente;
         public List<Carre> carres;
+        public static ConnexionBD connexionBD; 
 
         public Restaurant()
         {
             this.listAttente = new List<GroupeClient>();
             this.carres = new List<Carre>();
+            connexionBD = new ConnexionBD();
 
+            AppDomain.CurrentDomain.ProcessExit += new EventHandler(CurrentDomain_ProcessExit);
         }
 
         public  void tick()
@@ -55,10 +58,15 @@ namespace Metier
             this.maitreHotel = maitreHotel;
         }
 
-
         public void log(string s)
         {
             Console.WriteLine(s);
+        }
+
+        static void CurrentDomain_ProcessExit(object sender, EventArgs e)
+        {
+            Console.WriteLine("exit");
+            connexionBD.close();
         }
     }
 }

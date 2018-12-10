@@ -87,6 +87,8 @@ namespace UnitTestProject1
             resto.tick();
             resto.tick();
             resto.tick();
+            resto.tick();
+            resto.tick();
 
 
             Assert.AreEqual(EnumEtatTable.COMMANDE_EMISE, gc1.table.enumEtatTable);

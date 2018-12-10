@@ -9,9 +9,8 @@ using System.Data;
 
 namespace Metier.Factory
 {
-    class FabriqueRecette
+    public class FabriqueRecette
     {
-        public ConnexionBD connexionBD;
         public DataTable d1;
         public List<DataRow> list;
 
@@ -22,15 +21,15 @@ namespace Metier.Factory
 
             list = new List<DataRow>();
 
-            connexionBD = new ConnexionBD();
 
-            d1 = connexionBD.execQuery(SelectRecette(type));
+            d1 = Restaurant.connexionBD.execQuery(SelectRecette(type));
             foreach (DataRow r1 in d1.Rows)
             {
                 list.Add(r1);
+                Console.WriteLine(r1.ToString());
             }
 
-
+            
   
             
         }
