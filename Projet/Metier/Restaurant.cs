@@ -17,6 +17,8 @@ namespace Metier
         public MaitreHotel maitreHotel;
         public List<GroupeClient> listAttente;
         public List<Carre> carres;
+        public List<Recette> recettesAServir;
+        public List<Commande> commandesEnAttente;
 
         public Restaurant()
         {
