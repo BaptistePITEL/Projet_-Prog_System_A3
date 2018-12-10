@@ -11,11 +11,12 @@ namespace Metier.Cuisine
     {
         public Queue<Recette> recettes;
         public string role;
+        public Restaurant restaurant;
 
-
-        public ChefDePartie(string nom) : base(nom)
+        public ChefDePartie(string nom, Restaurant r) : base(nom)
         {
             this.recettes = new Queue<Recette>();
+            this.restaurant = r;
         }
 
         public void PreparerRecette()
@@ -23,7 +24,7 @@ namespace Metier.Cuisine
             foreach (Recette r in recettes)
             {
                 //Attendre tps preparation + cuisson + repos
-                //servir plat
+                this.restaurant.recettesAServir.Add(r);
             }
         }
 

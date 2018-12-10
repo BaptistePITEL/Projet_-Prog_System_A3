@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Metier.Salle;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Metier.Salle;
 
 namespace Metier.Cuisine
 {
@@ -12,8 +12,9 @@ namespace Metier.Cuisine
         public string categorie, titre;
         public Table table;
         public float tempsPrepa, tempsCuisson, tempsRepos;
-        public Recette(string categorie, string titre, float tempsPrepa, float tempsCuisson, float tempsRepos)
-        {
+
+        public Recette(string categorie, string titre,float tempsPrepa, float tempsCuisson, float tempsRepos)
+        { 
             this.categorie = categorie;
             this.titre = titre;
             this.tempsPrepa = tempsPrepa;

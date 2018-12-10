@@ -41,12 +41,12 @@ namespace Metier.Cuisine
         }
         public void OrdonnerCommande()
         {
-            for (int i = 0; i < this.commandes.Count; i++) 
+            for (int i = 0; i < this.commandes.Count; i++) ;
             {
                 Commande c = this.commandes.Dequeue();
                 foreach(Recette r in c.recettes)
                 {
-                    r.numTable = c.numTable;
+                    r.table = c.table;
                     foreach (ChefDePartie cp in this.chefParties)
                     {
                         if (cp.role.Equals(r.categorie))
