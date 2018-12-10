@@ -19,6 +19,8 @@ namespace Metier
 
         public List<GroupeClient> listAttente;
         public List<Carre> carres;
+        public List<Recette> recettesAServir;
+        public List<Commande> commandesEnAttente;
 
         public List<Recette> recettesAServir;
         public Queue<Commande> commandesEnAttente;

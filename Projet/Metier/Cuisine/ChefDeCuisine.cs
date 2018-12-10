@@ -58,14 +58,19 @@ namespace Metier.Cuisine
 
         public void ordonnerCommande()
         {
+<<<<<<< HEAD
 
             while (this.commandes.Count > 0)
+=======
+            for (int i = 0; i < this.commandes.Count; i++) ;
+>>>>>>> 4edef53407020649206c33f6d70fce782ea7cdd1
             {
                 Commande c = this.commandes.Dequeue();
 
                 log("Nb recette " + c.recettes.Count);
                 foreach (var rct in c.recettes)
                 {
+<<<<<<< HEAD
                     log("Recette " + rct.titre);
                 }
 
@@ -76,6 +81,10 @@ namespace Metier.Cuisine
                     log(r.categorie);
 
                     foreach (ChefDePartie cp in chefParties)
+=======
+                    r.table = c.table;
+                    foreach (ChefDePartie cp in this.chefParties)
+>>>>>>> 4edef53407020649206c33f6d70fce782ea7cdd1
                     {
                         if (cp.roles.Contains(r.categorie))
                         {

@@ -9,6 +9,7 @@ namespace Metier.Cuisine
 {
     public class ChefDePartie : Personnel
     {
+<<<<<<< HEAD
         public List<Recette> recettes;
         public List<string> roles;
         public Restaurant restaurant;
@@ -25,6 +26,16 @@ namespace Metier.Cuisine
         public override Restaurant getRestaurant()
         {
             return restaurant;
+=======
+        public Queue<Recette> recettes;
+        public string role;
+        public Restaurant restaurant;
+
+        public ChefDePartie(string nom, Restaurant r) : base(nom)
+        {
+            this.recettes = new Queue<Recette>();
+            this.restaurant = r;
+>>>>>>> 4edef53407020649206c33f6d70fce782ea7cdd1
         }
 
         public void PreparerRecette()
