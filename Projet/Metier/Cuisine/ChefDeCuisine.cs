@@ -10,12 +10,12 @@ namespace Metier.Cuisine
 {
     public class ChefDeCuisine : Personnel
     {
-        public List<Commande> commandes;
+        public Queue<Commande> commandes;
         public List<ChefDePartie> chefParties;
         
         public ChefDeCuisine(string nom) : base(nom)
         {
-            this.commandes = new List<Commande>();
+            this.commandes = new Queue<Commande>();
             this.chefParties = new List<ChefDePartie>();
         }
 
@@ -32,28 +32,31 @@ namespace Metier.Cuisine
 
     public void RecevoirCommande(Commande c)
         {
-            this.commandes.Add(c);
+            this.commandes.Enqueue(c);
         }
         
         public bool RecetteDisponible(Recette r)
         {
-            return false;
+            return true;
         }
-/*
         public void OrdonnerCommande()
         {
-            foreach(Recette r in this.commandes.First().recettes)
+            for (int i = 0; i < this.commandes.Count; i++) ;
             {
-                foreach(ChefDePartie cp in this.chefParties)
+                Commande c = this.commandes.Dequeue();
+                foreach(Recette r in c.recettes)
                 {
-                    if(cp.role.Equals(r.categorie))
+                    r.numTable = c.numTable;
+                    foreach (ChefDePartie cp in this.chefParties)
                     {
-                        //cp.recettes.(r);
+                        if (cp.role.Equals(r.categorie))
+                        {
+                            cp.recettes.Enqueue(r);
+                        }
                     }
                 }
+                
             }
-            this.commandes.RemoveAt(0);
         }
-        */
     }
 }
