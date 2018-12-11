@@ -17,13 +17,11 @@ namespace Metier
         public MaitreHotel maitreHotel;
         public ChefDeCuisine chefDeCuisine;
 
+        public Comptoir comptoir;
+
         public List<GroupeClient> listAttente;
         public List<Carre> carres;
-        public List<Recette> recettesAServir;
-        public List<Commande> commandesEnAttente;
 
-        public List<Recette> recettesAServir;
-        public Queue<Commande> commandesEnAttente;
 
         public int nbTick { get; set; }
 
@@ -31,8 +29,6 @@ namespace Metier
         {
             this.listAttente = new List<GroupeClient>();
             this.carres = new List<Carre>();
-            this.recettesAServir = new List<Recette>();
-            this.commandesEnAttente = new Queue<Commande>();
         }
 
         public  void tick()
@@ -42,8 +38,15 @@ namespace Metier
             maitreHotel.tick();
             foreach(Carre c in carres)
             {
-                c.chefDeRang.tick();     
-                foreach(Rang r in c.rangs)
+                c.chefDeRang.tick();
+
+
+                foreach (Serveur serveur in c.serveurs)
+                {
+                    serveur.tick();
+                }
+
+                foreach (Rang r in c.rangs)
                 {
                     foreach(Table t in r.tables)
                     {
@@ -51,6 +54,9 @@ namespace Metier
                              t.grclient.tick();
                     }
                 }
+                
+
+
                 chefDeCuisine.tick();
                 foreach(ChefDePartie chef in chefDeCuisine.chefParties)
                 {

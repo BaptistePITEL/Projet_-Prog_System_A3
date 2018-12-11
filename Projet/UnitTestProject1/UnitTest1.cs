@@ -24,10 +24,19 @@ namespace UnitTestProject1
 
             RestaurantBuilder restaurantBuilder = new RestaurantBuilder();
             RestaurantEngineer restaurantEngineer = new RestaurantEngineer(restaurantBuilder);
-            List<string> list = new List<string>();
-            list.Add("Didier");
-            list.Add("Gilbert");
-            restaurantEngineer.makeRestaurant(2, 6, 3, 5, list, "Gontrand", "Gilbert");
+            List<string> listChef = new List<string>();
+            listChef.Add("Chef de Rang 1");
+            listChef.Add("Chef de Rang 2");
+
+            List<string> listServeur = new List<string>();
+            listServeur.Add("Serveur 1");
+            listServeur.Add("Serveur 2");
+            listServeur.Add("Serveur 3");
+            listServeur.Add("Serveur 4");
+
+
+
+            restaurantEngineer.makeRestaurant(2, 6, 3, 5, listChef, "Maitre d'hotel", "Chef de cuisine", listServeur);
             resto = restaurantEngineer.getRestaurant();
 
             /* gc1 = new GroupeClient();
@@ -55,6 +64,25 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestAccueilClient()
         {
+            RestaurantBuilder restaurantBuilder = new RestaurantBuilder();
+            RestaurantEngineer restaurantEngineer = new RestaurantEngineer(restaurantBuilder);
+            List<string> listChef = new List<string>();
+            listChef.Add("Chef de Rang 1");
+            listChef.Add("Chef de Rang 2");
+
+            List<string> listServeur = new List<string>();
+            listServeur.Add("Serveur 1");
+            listServeur.Add("Serveur 2");
+            listServeur.Add("Serveur 3");
+            listServeur.Add("Serveur 4");
+
+
+
+            restaurantEngineer.makeRestaurant(2, 6, 3, 5, listChef, "Maitre d'hotel", "Chef de cuisine", listServeur);
+            resto = restaurantEngineer.getRestaurant();
+
+            gc1 = FabriqueGroupeClient.create();
+
             resto.groupeClientArrive(gc1);
 
 
@@ -67,6 +95,24 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestAttribuerCarte()
         {
+            RestaurantBuilder restaurantBuilder = new RestaurantBuilder();
+            RestaurantEngineer restaurantEngineer = new RestaurantEngineer(restaurantBuilder);
+            List<string> listChef = new List<string>();
+            listChef.Add("Chef de Rang 1");
+            listChef.Add("Chef de Rang 2");
+
+            List<string> listServeur = new List<string>();
+            listServeur.Add("Serveur 1");
+            listServeur.Add("Serveur 2");
+            listServeur.Add("Serveur 3");
+            listServeur.Add("Serveur 4");
+
+
+
+            restaurantEngineer.makeRestaurant(2, 6, 3, 5, listChef, "Maitre d'hotel", "Chef de cuisine", listServeur);
+            resto = restaurantEngineer.getRestaurant();
+
+            gc1 = FabriqueGroupeClient.create();
             resto.groupeClientArrive(gc1);
 
             resto.tickFor(12);
@@ -77,10 +123,27 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestPrendreCommande()
         {
+
+            RestaurantBuilder restaurantBuilder = new RestaurantBuilder();
+            RestaurantEngineer restaurantEngineer = new RestaurantEngineer(restaurantBuilder);
+            List<string> listChef = new List<string>();
+            listChef.Add("Chef de Rang 1");
+            listChef.Add("Chef de Rang 2");
+
+            List<string> listServeur = new List<string>();
+            listServeur.Add("Serveur 1");
+            listServeur.Add("Serveur 2");
+            listServeur.Add("Serveur 3");
+            listServeur.Add("Serveur 4");
+
+
+
+            restaurantEngineer.makeRestaurant(2, 6, 3, 5, listChef, "Maitre d'hotel", "Chef de cuisine", listServeur);
+            resto = restaurantEngineer.getRestaurant();
+
+            gc1 = FabriqueGroupeClient.create();
             resto.groupeClientArrive(gc1);
-
-
-
+            
             resto.tickFor(24);
 
             Assert.AreEqual(EnumEtatTable.COMMANDE_EMISE, gc1.table.enumEtatTable);
@@ -89,6 +152,25 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestClientChoixRecette()
         {
+
+            RestaurantBuilder restaurantBuilder = new RestaurantBuilder();
+            RestaurantEngineer restaurantEngineer = new RestaurantEngineer(restaurantBuilder);
+            List<string> listChef = new List<string>();
+            listChef.Add("Chef de Rang 1");
+            listChef.Add("Chef de Rang 2");
+
+            List<string> listServeur = new List<string>();
+            listServeur.Add("Serveur 1");
+            listServeur.Add("Serveur 2");
+            listServeur.Add("Serveur 3");
+            listServeur.Add("Serveur 4");
+
+
+
+            restaurantEngineer.makeRestaurant(2, 6, 3, 5, listChef, "Maitre d'hotel", "Chef de cuisine", listServeur);
+            resto = restaurantEngineer.getRestaurant();
+
+            gc1 = FabriqueGroupeClient.create();
             resto.groupeClientArrive(gc1);
 
             resto.tickFor(14);
@@ -100,12 +182,32 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestCommandeprise()
         {
+
+            RestaurantBuilder restaurantBuilder = new RestaurantBuilder();
+            RestaurantEngineer restaurantEngineer = new RestaurantEngineer(restaurantBuilder);
+            List<string> listChef = new List<string>();
+            listChef.Add("Chef de Rang 1");
+            listChef.Add("Chef de Rang 2");
+
+            List<string> listServeur = new List<string>();
+            listServeur.Add("Serveur 1");
+            listServeur.Add("Serveur 2");
+            listServeur.Add("Serveur 3");
+            listServeur.Add("Serveur 4");
+
+
+
+            restaurantEngineer.makeRestaurant(2, 6, 3, 5, listChef, "Maitre d'hotel", "Chef de cuisine", listServeur);
+            resto = restaurantEngineer.getRestaurant();
+
+            gc1 = FabriqueGroupeClient.create();
             resto.groupeClientArrive(gc1);
+            
 
             resto.tickFor(24);
 
 
-            Assert.AreNotEqual(resto.commandesEnAttente.Count, 0);
+            Assert.AreNotEqual(resto.comptoir.commandeAPrepare.Count, 0);
         }
 
 
@@ -114,10 +216,19 @@ namespace UnitTestProject1
         {
             RestaurantBuilder restaurantBuilder = new RestaurantBuilder();
             RestaurantEngineer restaurantEngineer = new RestaurantEngineer(restaurantBuilder);
-            List<string> list = new List<string>();
-            list.Add("Didier");
-            list.Add("Manu");
-            restaurantEngineer.makeRestaurant(2, 6, 3, 5, list, "Gontrand", "Gilbert");
+            List<string> listChef = new List<string>();
+            listChef.Add("Chef de Rang 1");
+            listChef.Add("Chef de Rang 2");
+
+            List<string> listServeur = new List<string>();
+            listServeur.Add("Serveur 1");
+            listServeur.Add("Serveur 2");
+            listServeur.Add("Serveur 3");
+            listServeur.Add("Serveur 4");
+
+
+
+            restaurantEngineer.makeRestaurant(2, 6, 3, 5, listChef, "Maitre d'hotel", "Chef de cuisine", listServeur);
             resto = restaurantEngineer.getRestaurant();
             
             gc1 = FabriqueGroupeClient.create();
@@ -135,13 +246,67 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestChefDePartieRecettePrete()
         {
+            RestaurantBuilder restaurantBuilder = new RestaurantBuilder();
+            RestaurantEngineer restaurantEngineer = new RestaurantEngineer(restaurantBuilder);
+            List<string> listChef = new List<string>();
+            listChef.Add("Chef de Rang 1");
+            listChef.Add("Chef de Rang 2");
+
+            List<string> listServeur = new List<string>();
+            listServeur.Add("Serveur 1");
+            listServeur.Add("Serveur 2");
+            listServeur.Add("Serveur 3");
+            listServeur.Add("Serveur 4");
+
+
+
+            restaurantEngineer.makeRestaurant(2, 6, 3, 5, listChef, "Maitre d'hotel", "Chef de cuisine", listServeur);
+            resto = restaurantEngineer.getRestaurant();
+
+            gc1 = FabriqueGroupeClient.create();
             resto.groupeClientArrive(gc1);
 
-            resto.tickFor(29);
+            gc2 = FabriqueGroupeClient.create();
+            resto.groupeClientArrive(gc2);
 
 
-            Assert.AreNotEqual(resto.chefDeCuisine.chefParties[0].recettes[0], false);
+            resto.tickFor(500);
+
+           
+            Assert.AreEqual(12, resto.comptoir.entreesAServir.Count);
+            
         }
+        [TestMethod]
+        public void TestServeur()
+        {
+            RestaurantBuilder restaurantBuilder = new RestaurantBuilder();
+            RestaurantEngineer restaurantEngineer = new RestaurantEngineer(restaurantBuilder);
+            List<string> listChef = new List<string>();
+            listChef.Add("Chef de Rang 1");
+            listChef.Add("Chef de Rang 2");
+
+            List<string> listServeur = new List<string>();
+            listServeur.Add("Serveur 1");
+            listServeur.Add("Serveur 2");
+            listServeur.Add("Serveur 3");
+            listServeur.Add("Serveur 4");
+
+
+
+            restaurantEngineer.makeRestaurant(2, 6, 3, 5, listChef, "Maitre d'hotel", "Chef de cuisine", listServeur);
+            resto = restaurantEngineer.getRestaurant();
+
+            gc1 = FabriqueGroupeClient.create();
+            resto.groupeClientArrive(gc1);
+
+
+            resto.tickFor(500);
+
+
+            Assert.AreNotEqual(0, resto.comptoir.entreesAServir.Count);
+
+        }
+
 
 
     }

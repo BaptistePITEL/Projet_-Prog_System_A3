@@ -6,7 +6,7 @@ namespace Sim
     {
         static void Main(string[] args)
         {
-            new UnitTestProject1.UnitTest1().TestChefDeCuisineRecuCommande();
+            new UnitTestProject1.UnitTest1().TestServeur();
             Console.ReadKey();
         }
     }

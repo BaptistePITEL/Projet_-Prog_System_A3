@@ -14,8 +14,12 @@ namespace Metier.Salle
         PRET_A_COMMANDE_ATTENTE,
         COMMANDE_EMISE,
         EN_ATTENTE,
-        REPAS,
-        BESOIN_PAIN,
-        BESOIN_EAU
+        ENTREE,
+        MANGE_ENTREE,
+        PLAT,
+        MANGE_PLAT,
+        DESSERT,
+        MANGE_DESSERT,
+        REPAS_FINI
     }
 }

@@ -13,7 +13,8 @@ namespace Metier.Factory
         public static GroupeClient create()
         {
             Random r = new Random();
-            int tailleGroupe = 2/*r.Next(2,10)*/;
+            int tailleGroupe = 3
+                /*r.Next(2,10)*/;
 
 
 

@@ -32,13 +32,13 @@ namespace Metier.Cuisine
         public override void tick()
         {
 
-            if (resto.commandesEnAttente.Count != 0)
+            if (resto.comptoir.commandeAPrepare.Count != 0)
             {
                 compteur += 1;
                 if (compteur == 5)
                 {
-                    log("Prépa commence");
-                    recevoirCommande(resto.commandesEnAttente.Dequeue());
+                    log("Préparation commencé");
+                    recevoirCommande(resto.comptoir.commandeAPrepare.Dequeue());
                     ordonnerCommande();
                     compteur = 0;
 
@@ -58,40 +58,49 @@ namespace Metier.Cuisine
 
         public void ordonnerCommande()
         {
-<<<<<<< HEAD
-
             while (this.commandes.Count > 0)
-=======
-            for (int i = 0; i < this.commandes.Count; i++) ;
->>>>>>> 4edef53407020649206c33f6d70fce782ea7cdd1
-            {
+            {   
                 Commande c = this.commandes.Dequeue();
 
-                log("Nb recette " + c.recettes.Count);
+                log("Nombre de recette : " + c.recettes.Count);
+
                 foreach (var rct in c.recettes)
                 {
-<<<<<<< HEAD
-                    log("Recette " + rct.titre);
+                    log("Recette : " + rct.titre);
                 }
-
 
                 foreach (Recette r in c.recettes)
                 {
+                    log("Catégorie : " + r.categorie );
 
-                    log(r.categorie);
-
-                    foreach (ChefDePartie cp in chefParties)
-=======
                     r.table = c.table;
+                    int quitter = 0;
                     foreach (ChefDePartie cp in this.chefParties)
->>>>>>> 4edef53407020649206c33f6d70fce782ea7cdd1
                     {
-                        if (cp.roles.Contains(r.categorie))
-                        {
-                            cp.recettes.Add(r);
-                            break;
+                        if (cp.compteurRecette == 0 )
+                        { 
+                            if (cp.roles.Contains(r.categorie))
+                            {
+                                cp.compteurRecette = 1;
+                                foreach(ChefDePartie cp1 in this.chefParties)
+                                {
+                                    if(cp1 != cp)
+                                    {
+                                        cp1.compteurRecette = 0;
+                                    }
+                                }
+                                quitter = 1;
+                                cp.recettes.Add(r);
+                                break;
+                            }
+                            if (quitter == 1)
+                            {
+                                c.recettes.Remove(r);
+                                break;
+                            }
                         }
                     }
+
                 }
             }
 

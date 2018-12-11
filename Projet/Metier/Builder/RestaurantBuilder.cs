@@ -20,17 +20,22 @@ namespace Metier.Builder
             this.restaurant = new Restaurant();
         }
 
-        public void buildCarres(int nbCarre, int nbRangsParCarre, int nbTablesParRang,int tailleTable, List<string> chefs)
+        public void buildCarres(int nbCarre, int nbRangsParCarre, int nbTablesParRang,int tailleTable, List<string> chefs, List<string> serveurs)
         {
             List<int> list = new List<int> { 2, 4, 6, 8, 10 };
 
             Random rnd = new Random();
+            int compteur = 0;
             for (int i = 0; i < nbCarre; i++)
             {
                 var carre = new Carre();
                 carre.resto = restaurant;
                 restaurant.carres.Add(carre);
                 restaurant.carres[i].chefDeRang = new ChefDeRang(this.restaurant,restaurant.carres[i], chefs[i]);
+                restaurant.carres[i].serveurs.Add(new Serveur(restaurant.carres[i], this.restaurant, serveurs[compteur]));
+                compteur += 1;
+                restaurant.carres[i].serveurs.Add(new Serveur(restaurant.carres[i], this.restaurant, serveurs[compteur]));
+                compteur += 1;
                 for (int j = 0; j < nbRangsParCarre; j++)
                 {
 
@@ -56,9 +61,14 @@ namespace Metier.Builder
         {
             ChefDeCuisine chefDeCuisine = new ChefDeCuisine(restaurant, nomChefDeCuisine);
             chefDeCuisine.chefParties = new List<ChefDePartie>();
-            chefDeCuisine.chefParties.Add(new ChefDePartie("Antoine", restaurant, new List<string>() {"Desserts", "Plat"}));
-            chefDeCuisine.chefParties.Add(new ChefDePartie("Cyrille", restaurant, new List<string>() { "Entrées", "Plat" }));
+            chefDeCuisine.chefParties.Add(new ChefDePartie("Antoine", restaurant, new List<string>() {"Entrées", "Plat","Desserts"}));
+            chefDeCuisine.chefParties.Add(new ChefDePartie("Cyrille", restaurant, new List<string>() { "Entrées", "Plat","Desserts" }));
             restaurant.addChefDeCuisine(chefDeCuisine);
+        }
+
+        public void buildComptoir()
+        {
+            restaurant.comptoir = new Comptoir();
         }
 
         public Restaurant getRestaurant()

@@ -10,9 +10,11 @@ namespace Metier.Builder
     {
         void buildMaitreHotel(string nomMaitreHotel);
 
-        void buildCarres(int nbCarre, int nbRangsParCarre, int nbTablesParRang, int tailleTable, List<string> chefs);
+        void buildCarres(int nbCarre, int nbRangsParCarre, int nbTablesParRang, int tailleTable, List<string> chefs, List<string> serveurs);
 
         void buildChefDeCuisine(string nomChefdeCuisine);
+
+        void buildComptoir();
 
         Restaurant getRestaurant();
     }

@@ -29,6 +29,7 @@ namespace Metier.Salle
                 {
                    if( c.chefDeRang.isDispo())
                     {
+                        log("" + c.chefDeRang.nom + " est disponible, Client attribué");
                         c.chefDeRang.gC = gC;
                         resto.listAttente.Remove(gC);
                         quitter = 1;

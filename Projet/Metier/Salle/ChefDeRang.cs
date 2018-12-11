@@ -174,21 +174,25 @@ namespace Metier.Salle
 
             foreach (Client client in t.grclient.clients)
             {
-
-
                 commande.recettes.Add(client.entree);
-
-                commande.recettes.Add(client.plat);
-
-                commande.recettes.Add(client.dessert);
-
-
             }
 
-            resto.commandesEnAttente.Enqueue(commande);
+            foreach (Client client in t.grclient.clients)
+            {
+                commande.recettes.Add(client.plat);
+            }
+
+            foreach (Client client in t.grclient.clients)
+            {
+                commande.recettes.Add(client.dessert);
+            }
+
+
+
+            resto.comptoir.commandeAPrepare.Enqueue(commande);
             t.enumEtatTable = EnumEtatTable.COMMANDE_EMISE;
 
-            log("Commande prise sur la table "+commande.recettes.Count);
+            log("Commande prise sur la table :  "+commande.recettes.Count + " plat(s)");
 
         }
 

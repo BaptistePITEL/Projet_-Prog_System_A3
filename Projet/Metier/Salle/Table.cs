@@ -9,7 +9,7 @@ namespace Metier.Salle
 {
     public class Table
     {
-        public int nbPlaces;
+        public int nbPlaces, nbAssiettes;
         public GroupeClient grclient;
         public EnumEtatTable enumEtatTable;
         public Rang rang { get; set; }
@@ -17,6 +17,7 @@ namespace Metier.Salle
         public Table(int nb )
         {
             this.nbPlaces = nb;
+            this.nbAssiettes = 0;
             enumEtatTable = EnumEtatTable.INSTALLE;
         }
 

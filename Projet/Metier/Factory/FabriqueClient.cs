@@ -13,7 +13,10 @@ namespace Metier.Factory
                 {
                     "John Doe",
                      "Maria Garcia",
-                    "Clay Robinson"
+                    "Clay Robinson",
+                    "Anais Tremblay",
+                    "Isa Baresi",
+                    "Blenda Olsson"
                 };
 
         public Client create(GroupeClient groupeClient)

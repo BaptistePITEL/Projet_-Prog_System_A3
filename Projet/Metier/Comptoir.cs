@@ -8,28 +8,21 @@ using Metier.Cuisine;
 
 namespace Metier
 {
-    public sealed class Comptoir
-    {/*
-        private static Comptoir instance =  null;
-        private  Queue<Commande> commandesEnAttente;
-        private  List<Recette> recettesAServir;
+    public class Comptoir
+    {
+        public Queue<Commande> commandeAPrepare;
+        public Queue<Recette> entreesAServir;
+        public Queue<Recette> platsAServir;
+        public Queue<Recette> dessertsAServir;
 
-        private  Comptoir(Queue<Commande> commandeEnAttente, List<Recette> recetteAServir)
+        public  Comptoir()
         {
-            this.commandesEnAttente = commandesEnAttente;
-            this.recettesAServir = recettesAServir;
+            this.commandeAPrepare = new Queue<Commande>();
+            this.entreesAServir = new Queue<Recette>();
+            this.platsAServir = new Queue<Recette>();
+            this.dessertsAServir = new Queue<Recette>();
         }
 
-        public static Comptoir Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new Comptoir();
-                }
-                return instance;
-            }
-        }*/
+       
     }
 }
