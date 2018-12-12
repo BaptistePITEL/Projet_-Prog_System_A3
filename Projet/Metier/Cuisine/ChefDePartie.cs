@@ -42,22 +42,28 @@ namespace Metier.Cuisine
             if(recettes.Count != 0)
             {
                 compteurPrepa += 1;
-                if (compteurPrepa == 100)
+                if (compteurPrepa == 50)
                 {
-                    log("Plat préparé : " + recettes.First().titre );
+                   
                     compteurPrepa = 0;
                     recettes.First().etat = true;
                     if (recettes.First().categorie.Equals("Entrées"))
                     {
                         restaurant.comptoir.entreesAServir.Enqueue(recettes.First());
+                        log("Entrée préparé : " + recettes.First().titre);
                     }
-                    else if(recettes.First().categorie.Equals("Plats"))
+
+                    if (recettes.First().categorie.Equals("Plat"))
                     {
                         restaurant.comptoir.platsAServir.Enqueue(recettes.First());
+                        log("Plat préparé : " + recettes.First().titre);
                     }
-                    else if (recettes.First().categorie.Equals("Desserts"))
+
+                    if (recettes.First().categorie.Equals("Desserts"))
                     {
                         restaurant.comptoir.dessertsAServir.Enqueue(recettes.First());
+
+                        log("Dessert préparé : " + recettes.First().titre);
                     }
                     recettes.Remove(recettes.First());
                 }

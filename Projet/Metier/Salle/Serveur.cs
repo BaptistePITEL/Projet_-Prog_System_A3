@@ -11,29 +11,27 @@ namespace Metier.Salle
     {
         public Carre carre;
         public Restaurant restaurant;
-        public int compteurServir = 0;
+
+        public int compteurServirEntree = 0;
+        public int compteurServirPlat = 0;
+        public int compteurServirDessert = 0;
+
         public static int serviceEntree = 0;
         public static int servicePlat = 0;
         public static int serviceDessert = 0;
 
-        public List<Recette> recettes;
+        public Recette recette;
         
         public Serveur(Carre carre, Restaurant r, string nom) : base(nom)
         {
             this.carre = carre;
             this.restaurant = r;
-            this.recettes = new List<Recette>();
         }
 
         public override Restaurant getRestaurant()
         {
             return restaurant;
         }
-
- 
-
-
-
 
         public override void tick()
         {
@@ -47,29 +45,37 @@ namespace Metier.Salle
                     nombreClient_Entree = recette.table.grclient.clients.Count;
                 }
 
-                if (nombreClient_Entree == restaurant.comptoir.entreesAServir.Count || serviceEntree >= 1)
+                int tablePresente = 0;
+
+                foreach (Rang rang in this.carre.rangs)
                 {
-                    compteurServir += 1;
-
-                    if (compteurServir == 5)
+                    if (rang.tables.Contains(restaurant.comptoir.entreesAServir.First().table))
                     {
-                        recettes.Add(restaurant.comptoir.entreesAServir.Dequeue());
+                        tablePresente = 1;
+                    }
+                }
 
+                if ((nombreClient_Entree == restaurant.comptoir.entreesAServir.Count || serviceEntree >= 1) && tablePresente == 1)
+                {
+                    
+                    compteurServirEntree += 1;
 
-                        log("" + serviceEntree);
-
-
+                    if (compteurServirEntree == 2)
+                    {
+                        recette  = restaurant.comptoir.entreesAServir.Dequeue();
+                        
                         int quitter = 0;
                         foreach (Rang rang in this.carre.rangs)
                         {
-                            if (rang.tables.Contains(recettes.First().table))
+                            if (rang.tables.Contains(recette.table))
                             {
-                                foreach (Client client in recettes.First().table.grclient.clients)
+                                foreach (Client client in recette.table.grclient.clients)
                                 {
                                     if (client.platRecu == null)
                                     {
-                                        client.platRecu = recettes.First();
-                                        log("" + this.nom + ": Plat servis : " + recettes.First().titre);
+                                        client.platRecu = recette;
+                                        log("" + this.nom + ": Entrées servis : " + recette.titre);
+                                        recette = null;
                                         quitter = 1;
                                         break;
                                     }
@@ -79,18 +85,27 @@ namespace Metier.Salle
                                     break;
                             }
                         }
-                        compteurServir = 0;
+                        compteurServirEntree = 0;
+
+                        Serveur.serviceEntree += 1;
+                        Serveur.servicePlat = 0;
+                        Serveur.serviceDessert = 0;
+
+                        if (Serveur.serviceEntree == nombreClient_Entree)
+                        {
+                            Serveur.serviceEntree = 0;
+                        }
 
                     }
-                    Serveur.serviceEntree += 1;
-                    if (Serveur.serviceEntree >= nombreClient_Entree)
-                    {
-                        Serveur.serviceEntree = 0;
-                    }
+
+                
                 }
 
             }
-            else if (restaurant.comptoir.platsAServir.Count != 0)
+
+          
+
+            if (restaurant.comptoir.platsAServir.Count != 0)
             { 
 
                 int nombreClient_Plat = 0;
@@ -100,26 +115,38 @@ namespace Metier.Salle
                     nombreClient_Plat = recette.table.grclient.clients.Count;
                 }
 
+                int tablePresente = 0;
 
-                    if (nombreClient_Plat == restaurant.comptoir.platsAServir.Count || servicePlat >= 1)
+                foreach (Rang rang in this.carre.rangs)
+                {
+                    if (rang.tables.Contains(restaurant.comptoir.platsAServir.First().table))
                     {
-                        compteurServir += 1;
+                        tablePresente = 1;
+                    }
+                }
 
-                        if (compteurServir == 5)
+                if ((nombreClient_Plat == restaurant.comptoir.platsAServir.Count || servicePlat >= 1) && tablePresente == 1)
+                    {
+                        compteurServirPlat += 1;
+
+                        if (compteurServirPlat == 2)
                         {
-                            recettes.Add(restaurant.comptoir.platsAServir.Dequeue());
+                             recette = restaurant.comptoir.platsAServir.Dequeue();
+                        
+                             int quitter = 0;
 
-                            int quitter = 0;
                             foreach (Rang rang in this.carre.rangs)
                             {
-                                if (rang.tables.Contains(recettes.First().table))
+                                if (rang.tables.Contains(recette.table))
                                 {
-                                    foreach (Client client in recettes.First().table.grclient.clients)
+                                    foreach (Client client in recette.table.grclient.clients)
                                     {
+
                                         if (client.platRecu == null)
                                         {
-                                            client.platRecu = recettes.First();
-                                            log("" + this.nom + ": Plat servis : " + recettes.First().titre);
+                                            client.platRecu = recette;
+                                            log("" + this.nom + ": Plat servis : " + recette.titre);                                       
+                                            recette = null;
                                             quitter = 1;
                                             break;
                                         }
@@ -129,14 +156,17 @@ namespace Metier.Salle
                                         break;
                                 }
                             }
-                            compteurServir = 0;
-                        }
-                        if (Serveur.servicePlat == nombreClient_Plat)
-                        {
-                            Serveur.servicePlat = 0;
-                        }
-                        Serveur.servicePlat += 1;
+                            compteurServirPlat = 0;
 
+                            Serveur.serviceEntree = 0;
+                            Serveur.servicePlat += 1;
+                            Serveur.serviceDessert = 0;
+
+                            if (Serveur.servicePlat == nombreClient_Plat)
+                            {
+                                Serveur.servicePlat = 0;
+                            }
+                        }     
                     }
             }
 
@@ -148,25 +178,38 @@ namespace Metier.Salle
                     nombreClient_Dessert = recette.table.grclient.clients.Count;
                 }
 
-                if (nombreClient_Dessert == restaurant.comptoir.dessertsAServir.Count || serviceDessert >= 1)
-                {
-                    compteurServir += 1;
 
-                    if (compteurServir == 5)
+                int tablePresente = 0;
+
+                foreach (Rang rang in this.carre.rangs)
+                {
+                    if (rang.tables.Contains(restaurant.comptoir.dessertsAServir.First().table))
                     {
-                        recettes.Add(restaurant.comptoir.dessertsAServir.Dequeue());
+                        tablePresente = 1;
+                    }
+                }
+
+                if ((nombreClient_Dessert == restaurant.comptoir.dessertsAServir.Count || serviceDessert >= 1) && tablePresente == 1)
+                {
+                    compteurServirDessert += 1;
+
+                    if (compteurServirDessert == 2)
+                    {
+                        recette  = restaurant.comptoir.dessertsAServir.Dequeue();
 
                         int quitter = 0;
                         foreach (Rang rang in this.carre.rangs)
                         {
-                            if (rang.tables.Contains(recettes.First().table))
+                            if (rang.tables.Contains(recette.table))
                             {
-                                foreach (Client client in recettes.First().table.grclient.clients)
+                                foreach (Client client in recette.table.grclient.clients)
                                 {
                                     if (client.platRecu == null)
                                     {
-                                        client.platRecu = recettes.First();
-                                        log("" + this.nom + ": Plat servis : " + recettes.First().titre);
+                                        client.platRecu = recette;
+                                        log("" + this.nom + ": Dessert servis : " + recette.titre);
+
+                                        recette = null;
                                         quitter = 1;
                                         break;
                                     }
@@ -176,13 +219,18 @@ namespace Metier.Salle
                                     break;
                             }
                         }
-                        compteurServir = 0;
+                        compteurServirDessert = 0;
+
+                        Serveur.serviceEntree = 0;
+                        Serveur.servicePlat = 0;
+                        Serveur.serviceDessert += 1;
+
+                        if (Serveur.serviceDessert == nombreClient_Dessert)
+                        {
+                            Serveur.serviceDessert = 0;
+                        }
                     }
-                    if (Serveur.serviceDessert == nombreClient_Dessert)
-                    {
-                        Serveur.serviceDessert = 0;
-                    }
-                    Serveur.serviceDessert += 1;
+                   
                 }
             }
 

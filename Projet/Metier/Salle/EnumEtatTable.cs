@@ -8,6 +8,7 @@ namespace Metier.Salle
 {
     public enum EnumEtatTable
     {
+        INITIALE,
         INSTALLE, 
         ONT_CARTE,
         PRET_A_COMMANDE,
@@ -15,11 +16,9 @@ namespace Metier.Salle
         COMMANDE_EMISE,
         EN_ATTENTE,
         ENTREE,
-        MANGE_ENTREE,
         PLAT,
-        MANGE_PLAT,
         DESSERT,
-        MANGE_DESSERT,
-        REPAS_FINI
+        REPAS_FINI,
+        PAYE
     }
 }

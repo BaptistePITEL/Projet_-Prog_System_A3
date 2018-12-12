@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using Metier.Salle;
 using Metier.Cuisine;
 using static Metier.ConnexionBD;
@@ -34,7 +35,7 @@ namespace Metier
         public  void tick()
         {
             nbTick++;
-            log("------------------ DEBUT TICK ------------------");
+            //log("------------------ DEBUT TICK ------------------");
             maitreHotel.tick();
             foreach(Carre c in carres)
             {
@@ -63,14 +64,16 @@ namespace Metier
                     chef.tick();
                 }
             }
-            log("------------------ FIN TICK ------------------");
+           // log("------------------ FIN TICK ------------------");
         }
         public void tickFor(int x)
         {
-            for(int i = 0; i<x; i++)
+            log("-----------------------------Restaurant Ouvert !!!!!!!! ----------------------------------");
+            for (int i = 0; i<x; i++)
             {
                 tick();
             }
+            log("-----------------------------Restaurant Fermé !!!!!!!! ----------------------------------");
         }
 
         public void groupeClientArrive(GroupeClient gc)

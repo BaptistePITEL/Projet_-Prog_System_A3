@@ -299,11 +299,14 @@ namespace UnitTestProject1
             gc1 = FabriqueGroupeClient.create();
             resto.groupeClientArrive(gc1);
 
+            gc2 = FabriqueGroupeClient.create();
+            resto.groupeClientArrive(gc2);
 
-            resto.tickFor(500);
+            resto.tickFor(700);
 
 
-            Assert.AreNotEqual(0, resto.comptoir.entreesAServir.Count);
+
+            Assert.AreEqual(0, resto.comptoir.entreesAServir.Count);
 
         }
 

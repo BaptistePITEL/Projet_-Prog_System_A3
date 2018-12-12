@@ -120,6 +120,7 @@ namespace Metier.Salle
                             this.gC.table = t;
                             this.table = t;
                             t.grclient = gC;
+                            t.enumEtatTable = EnumEtatTable.INSTALLE;
                             this.gC = null;
                             log("TABLE TROUVE \n");
                             quitter = 1;

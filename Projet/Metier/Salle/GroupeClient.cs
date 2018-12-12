@@ -53,11 +53,15 @@ namespace Metier.Salle
                 {
                     nombreEntreRecu += 1;
                 }
-                else if (client.platRecu.categorie.Equals("Plat"))
+
+
+                if (client.platRecu.categorie.Equals("Plat"))
                 {
                      nombrePlatRecu += 1;
                 }
-                else if (client.platRecu.categorie.Equals("DESSERT"))
+
+
+                if (client.platRecu.categorie.Equals("Desserts"))
                 {
                      nombreDessertRecu += 1;
                 }
@@ -91,8 +95,110 @@ namespace Metier.Salle
 
         }
 
+        internal void checkToutLeMondeFiniPlat()
+        {
+            int nombre = 0;
+
+            foreach (var client in clients)
+            {
+                if (client.platRecu == null)
+                {
+                    nombre += 1;
+                }
+            }
+            if (nombre == this.clients.Count)
+            {
+                table.enumEtatTable = EnumEtatTable.COMMANDE_EMISE;
+                foreach (var client in clients)
+                {
+                    client.log(" Table fini de mangé Plat");
+                    break;
+                }
+            }
+        }
 
 
+        internal void checkToutLeMondeFiniEntree()
+        {
+
+            int nombre = 0;
+
+            foreach (var client in clients)
+            {
+                if (client.platRecu == null)
+                {
+                    nombre += 1;
+                }               
+            }
+            if (nombre == this.clients.Count)
+            {
+                table.enumEtatTable = EnumEtatTable.COMMANDE_EMISE;
+                foreach (var client in clients)
+                {
+                    client.log(" Table fini de mangé Entrée");
+                    break;
+                }
+            }
+        }
+
+
+        internal void checkToutLeMondeFiniDessert()
+        {
+            int nombre = 0;
+
+            foreach (var client in clients)
+            {
+                if (client.platRecu == null)
+                {
+                    nombre += 1;
+                }
+            }
+            if (nombre == this.clients.Count)
+            {
+                table.enumEtatTable = EnumEtatTable.REPAS_FINI;
+                foreach (var client in clients)
+                {
+                    client.log(" Table fini de mangé Dessert");
+                    break;
+                }
+            }
+        }
+
+
+        internal void checkToutLeMondePaye()
+        {
+            int nombre = 0;
+
+            foreach (var client in clients)
+            {
+                if (client.paye == true)
+                {
+                    nombre += 1;
+                }
+            }
+            if (nombre == this.clients.Count)
+            {
+                table.enumEtatTable = EnumEtatTable.PAYE;
+                foreach (var client in clients)
+                {
+                    client.log("La table a paye et le groupe part");
+                    break;
+                }
+
+                foreach (var client in clients)
+                {
+                   client.groupeClient = null;
+                }
+
+                table.grclient = null;
+                table.enumEtatTable = EnumEtatTable.INITIALE;
+                
+              
+
+            }
+        }
+
+  
     }
         
 }

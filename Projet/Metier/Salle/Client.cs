@@ -16,10 +16,16 @@ namespace Metier.Salle
         public Recette plat;
         public Recette dessert;
 
-
         public Recette platRecu;
 
         public int compteur = 0;
+        public int compteurFiniMangeEntree = 0;
+        public int compteurFiniMangePlat = 0;
+        public int compteurFiniMangeDessert = 0;
+        public int compteurPaye = 0;
+
+        public bool paye = false;
+
         public FabriqueRecette fR = new FabriqueRecette();
 
         public Client(GroupeClient groupeClient, string nom) : base(nom)
@@ -34,25 +40,71 @@ namespace Metier.Salle
 
         public override void tick()
         {
-            compteur += 1;
-            if (groupeClient.table.enumEtatTable == EnumEtatTable.ONT_CARTE && compteur == 5)
+            if (groupeClient != null)
             {
-                this.entree = fR.create(1, groupeClient.table);
-                this.plat = fR.create(2, groupeClient.table);
-                this.dessert = fR.create(3, groupeClient.table);
+                compteur += 1;
+                if (groupeClient.table.enumEtatTable == EnumEtatTable.ONT_CARTE && compteur == 5)
+                {
+                    this.entree = fR.create(1, groupeClient.table);
+                    this.plat = fR.create(2, groupeClient.table);
+                    this.dessert = fR.create(3, groupeClient.table);
 
 
 
-                groupeClient.checkToutLeMondePret();
+                    groupeClient.checkToutLeMondePret();
                     //table.enumEtatTable = EnumEtatTable.PRET_A_COMMANDE;
-                log(nom+" prêt a commander, " + compteur );
-            }
-            else  if (platRecu != null)
-            {                
-                if (groupeClient.table.enumEtatTable == EnumEtatTable.COMMANDE_EMISE)
-                     groupeClient.checkToutLeMondeRecu();              
+                    log(nom + " prêt a commander, " + compteur);
+                }
+                else if (platRecu != null)
+                {
+                    if (groupeClient.table.enumEtatTable == EnumEtatTable.COMMANDE_EMISE)
+                        groupeClient.checkToutLeMondeRecu();
+                }
 
-                
+
+                if (groupeClient.table.enumEtatTable == EnumEtatTable.ENTREE)
+                {
+                    compteurFiniMangeEntree += 1;
+                    if (compteurFiniMangeEntree == 20)
+                    {
+                        platRecu = null;
+                        groupeClient.checkToutLeMondeFiniEntree();
+                    }
+                }
+
+
+                if (groupeClient.table.enumEtatTable == EnumEtatTable.PLAT)
+                {
+                    compteurFiniMangePlat += 1;
+                    if (compteurFiniMangePlat == 20)
+                    {
+                        platRecu = null;
+                        groupeClient.checkToutLeMondeFiniPlat();
+                    }
+                }
+
+
+                if (groupeClient.table.enumEtatTable == EnumEtatTable.DESSERT)
+                {
+                    compteurFiniMangeDessert += 1;
+                    if (compteurFiniMangeDessert == 20)
+                    {
+                        platRecu = null;
+                        groupeClient.checkToutLeMondeFiniDessert();
+                    }
+                }
+
+
+                if (groupeClient.table.enumEtatTable == EnumEtatTable.REPAS_FINI)
+                {
+                    compteurPaye += 1;
+                    if (compteurPaye == 10)
+                    {
+                        paye = true;
+                        groupeClient.checkToutLeMondePaye();
+                    }
+                }
+
             }
         }
     }

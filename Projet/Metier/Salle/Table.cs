@@ -18,7 +18,7 @@ namespace Metier.Salle
         {
             this.nbPlaces = nb;
             this.nbAssiettes = 0;
-            enumEtatTable = EnumEtatTable.INSTALLE;
+            enumEtatTable = EnumEtatTable.INITIALE;
         }
 
         public void log()

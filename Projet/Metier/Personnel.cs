@@ -17,7 +17,7 @@ namespace Metier
 
         public void log(string log)
         {
-            System.Diagnostics.Debug.WriteLine("[" + nom + "](" + getRestaurant().nbTick + ") " + log);
+            System.Diagnostics.Debug.WriteLine("[" + nom + "](" + getRestaurant().nbTick + ") " + log + "\n");
         }
 
         public abstract Restaurant getRestaurant();
