@@ -299,6 +299,8 @@ namespace UnitTestProject1
             gc1 = FabriqueGroupeClient.create();
             resto.groupeClientArrive(gc1);
 
+            resto.tick();
+
             gc2 = FabriqueGroupeClient.create();
             resto.groupeClientArrive(gc2);
 

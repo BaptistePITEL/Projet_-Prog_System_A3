@@ -95,6 +95,8 @@ namespace Metier.Salle
 
         }
 
+
+
         internal void checkToutLeMondeFiniPlat()
         {
             int nombre = 0;
@@ -191,8 +193,7 @@ namespace Metier.Salle
                 }
 
                 table.grclient = null;
-                table.enumEtatTable = EnumEtatTable.INITIALE;
-                
+                table.enumEtatTable = EnumEtatTable.INITIALE;         
               
 
             }

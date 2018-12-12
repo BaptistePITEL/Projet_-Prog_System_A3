@@ -35,7 +35,7 @@ namespace Metier
         public  void tick()
         {
             nbTick++;
-            //log("------------------ DEBUT TICK ------------------");
+            log("------------------ DEBUT TICK ------------------");
             maitreHotel.tick();
             foreach(Carre c in carres)
             {
@@ -64,7 +64,7 @@ namespace Metier
                     chef.tick();
                 }
             }
-           // log("------------------ FIN TICK ------------------");
+           log("------------------ FIN TICK ------------------");
         }
         public void tickFor(int x)
         {

@@ -13,12 +13,14 @@ namespace Metier.Salle
         public GroupeClient grclient;
         public EnumEtatTable enumEtatTable;
         public Rang rang { get; set; }
+        public int numeroTable;
 
-        public Table(int nb )
+        public Table(int nb, int nbTable)
         {
             this.nbPlaces = nb;
             this.nbAssiettes = 0;
             enumEtatTable = EnumEtatTable.INITIALE;
+            this.numeroTable = nbTable;
         }
 
         public void log()

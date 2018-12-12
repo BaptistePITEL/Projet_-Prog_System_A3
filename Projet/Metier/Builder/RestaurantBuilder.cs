@@ -26,6 +26,7 @@ namespace Metier.Builder
 
             Random rnd = new Random();
             int compteur = 0;
+            int compteurNumeroTable = 0;
             for (int i = 0; i < nbCarre; i++)
             {
                 var carre = new Carre();
@@ -42,9 +43,11 @@ namespace Metier.Builder
                     var r = new Rang();
                     r.Carre = restaurant.carres[i];
                     restaurant.carres[i].rangs.Add(r);
+                    
                     for (int k = 0; k < nbTablesParRang; k++)
                     {
-                        var table = new Table(list[rnd.Next(0, list.Count - 1)]);
+                        compteurNumeroTable += 1;
+                        var table = new Table(list[rnd.Next(0, list.Count - 1)], compteurNumeroTable);
                         table.rang = r;
                         restaurant.carres[i].rangs[j].tables.Add(table);
                     }
@@ -61,8 +64,8 @@ namespace Metier.Builder
         {
             ChefDeCuisine chefDeCuisine = new ChefDeCuisine(restaurant, nomChefDeCuisine);
             chefDeCuisine.chefParties = new List<ChefDePartie>();
-            chefDeCuisine.chefParties.Add(new ChefDePartie("Antoine", restaurant, new List<string>() {"Entrées", "Plat","Desserts"}));
-            chefDeCuisine.chefParties.Add(new ChefDePartie("Cyrille", restaurant, new List<string>() { "Entrées", "Plat","Desserts" }));
+            chefDeCuisine.chefParties.Add(new ChefDePartie("Chef de partie 1", restaurant, new List<string>() {"Entrées", "Plat","Desserts"}));
+            chefDeCuisine.chefParties.Add(new ChefDePartie("Chef de partie 2", restaurant, new List<string>() { "Entrées", "Plat","Desserts" }));
             restaurant.addChefDeCuisine(chefDeCuisine);
         }
 

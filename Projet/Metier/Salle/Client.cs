@@ -65,7 +65,7 @@ namespace Metier.Salle
                 if (groupeClient.table.enumEtatTable == EnumEtatTable.ENTREE)
                 {
                     compteurFiniMangeEntree += 1;
-                    if (compteurFiniMangeEntree == 20)
+                    if (compteurFiniMangeEntree == 15)
                     {
                         platRecu = null;
                         groupeClient.checkToutLeMondeFiniEntree();
@@ -76,7 +76,7 @@ namespace Metier.Salle
                 if (groupeClient.table.enumEtatTable == EnumEtatTable.PLAT)
                 {
                     compteurFiniMangePlat += 1;
-                    if (compteurFiniMangePlat == 20)
+                    if (compteurFiniMangePlat == 15)
                     {
                         platRecu = null;
                         groupeClient.checkToutLeMondeFiniPlat();
@@ -87,7 +87,7 @@ namespace Metier.Salle
                 if (groupeClient.table.enumEtatTable == EnumEtatTable.DESSERT)
                 {
                     compteurFiniMangeDessert += 1;
-                    if (compteurFiniMangeDessert == 20)
+                    if (compteurFiniMangeDessert == 15)
                     {
                         platRecu = null;
                         groupeClient.checkToutLeMondeFiniDessert();
@@ -98,7 +98,7 @@ namespace Metier.Salle
                 if (groupeClient.table.enumEtatTable == EnumEtatTable.REPAS_FINI)
                 {
                     compteurPaye += 1;
-                    if (compteurPaye == 10)
+                    if (compteurPaye == 5)
                     {
                         paye = true;
                         groupeClient.checkToutLeMondePaye();

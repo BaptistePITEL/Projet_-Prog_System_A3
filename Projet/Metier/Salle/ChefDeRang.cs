@@ -52,7 +52,7 @@ namespace Metier.Salle
             if (tablesPretaCommander.Count != 0)
             {
                 compteurCommande += 1;
-                if (compteurCommande == 10)
+                if (compteurCommande == 5)
                 {
                     prendreCommande(tablesPretaCommander.Dequeue());
                     compteurCommande = 0;
@@ -75,7 +75,7 @@ namespace Metier.Salle
             else if (this.gC != null)
             {
                 compteurTable += 1;
-                if (compteurTable == 10)
+                if (compteurTable == 5)
                 {
                     attribuerTable();
                     compteurTable = 0;

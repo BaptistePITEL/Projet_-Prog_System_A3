@@ -42,7 +42,7 @@ namespace Metier.Cuisine
             if(recettes.Count != 0)
             {
                 compteurPrepa += 1;
-                if (compteurPrepa == 50)
+                if (compteurPrepa == 20)
                 {
                    
                     compteurPrepa = 0;
