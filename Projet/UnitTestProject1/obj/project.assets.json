@@ -2939,11 +2939,12 @@
       ]
     },
     "System.Collections.Immutable/1.2.0": {
-      "sha512": "Cma8cBW6di16ZLibL8LYQ+cLjGzoKxpOTu/faZfDcx94ZjAGq6Nv5RO7+T1YZXqEXTZP9rt1wLVEONVpURtUqw==",
+      "sha512": "2KnDB5xOmdERBZDniirmMPmY4AIUM7AbAIn+faLNShDc3mk0pe8iiPzBuJc5vMhTmMwEZbV2QbRAcaY+y2zwkw==",
       "type": "package",
       "path": "system.collections.immutable/1.2.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/System.Collections.Immutable.dll",
@@ -2955,11 +2956,12 @@
       ]
     },
     "System.Collections.NonGeneric/4.0.1": {
-      "sha512": "hMxFT2RhhlffyCdKLDXjx8WEC5JfCvNozAZxCablAuFRH74SCV4AgzE8yJCh/73bFnEoZgJ9MJmkjQ0dJmnKqA==",
+      "sha512": "00tOaRBr5u4JsckEJfBw1eI4Frc5pOFM5gSdqr6oMYjXwQLLhV/LAl2Ty0BgELDvSuqBRBETTgNCMwRuUShk9Q==",
       "type": "package",
       "path": "system.collections.nongeneric/4.0.1",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -2993,11 +2995,12 @@
       ]
     },
     "System.Collections.Specialized/4.0.1": {
-      "sha512": "/HKQyVP0yH1I0YtK7KJL/28snxHNH/bi+0lgk/+MbURF6ULhAE31MDI+NZDerNWu264YbxklXCCygISgm+HMug==",
+      "sha512": "2lTt/6eh+HGLg495oLQoFDvLLy9Wk1FTnCw87CywP+Yq0ITi1PD+p5wgxcyw1Zksu/1dLsQmo3ezO2BGRk67tg==",
       "type": "package",
       "path": "system.collections.specialized/4.0.1",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3031,11 +3034,12 @@
       ]
     },
     "System.ComponentModel/4.0.1": {
-      "sha512": "oBZFnm7seFiVfugsIyOvQCWobNZs7FzqDV/B7tx20Ep/l3UUFCPDkdTnCNaJZTU27zjeODmy2C/cP60u3D4c9w==",
+      "sha512": "3AOvy/bB7s8yAkolZOlqGeLDrPySuYsgkk7hKIBWn5a/Le7V16PDYQIzj7w7hi4UUXXmEmN/ZehNlAi5eD9r5w==",
       "type": "package",
       "path": "system.componentmodel/4.0.1",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3089,11 +3093,12 @@
       ]
     },
     "System.ComponentModel.EventBasedAsync/4.0.11": {
-      "sha512": "Z7SO6vvQIR84daPE4uhaNdef9CjgjDMGYkas8epUhf0U3WGuaGgZ0Mm4QuNycMdbHUY8KEdZrtgxonkAiJaAlA==",
+      "sha512": "uFA+3r3rVTW+XRXIOQky8x6NvdUj9bmliaZJdojDHcwt+lMq55EpYxNLHlnOwzS3kmIwv674WCRnHOZBAYmKiQ==",
       "type": "package",
       "path": "system.componentmodel.eventbasedasync/4.0.11",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4400,11 +4405,12 @@
       ]
     },
     "System.Reflection.Metadata/1.3.0": {
-      "sha512": "jMSCxA4LSyKBGRDm/WtfkO03FkcgRzHxwvQRib1bm2GZ8ifKM1MX1al6breGCEQK280mdl9uQS7JNPXRYk90jw==",
+      "sha512": "qCIx1jFdXi4k2l0JYCy0ukWKmeZZmZvu62sDe3pu4o2KoIc2Q3Pf7jOi92wh4hpAhYVisXcEDJkOASuMaDeSLw==",
       "type": "package",
       "path": "system.reflection.metadata/1.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.1/System.Reflection.Metadata.dll",
@@ -5854,23 +5860,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Pitel\\.nuget\\packages\\": {},
+    "C:\\Users\\Nutzer\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Pitel\\Desktop\\CESI Exia\\A3\\Semestre 5\\Bloc 2 - Programmation\\Projet_Prog_System_A3\\Projet_Prog_System_A3\\Projet\\UnitTestProject1\\UnitTestProject1.csproj",
+      "projectUniqueName": "C:\\Users\\Nutzer\\Documents\\CESI\\Projet Prog.Système\\Projet_Prog_System_A3\\Projet\\UnitTestProject1\\UnitTestProject1.csproj",
       "projectName": "UnitTestProject1",
-      "projectPath": "C:\\Users\\Pitel\\Desktop\\CESI Exia\\A3\\Semestre 5\\Bloc 2 - Programmation\\Projet_Prog_System_A3\\Projet_Prog_System_A3\\Projet\\UnitTestProject1\\UnitTestProject1.csproj",
-      "packagesPath": "C:\\Users\\Pitel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Pitel\\Desktop\\CESI Exia\\A3\\Semestre 5\\Bloc 2 - Programmation\\Projet_Prog_System_A3\\Projet_Prog_System_A3\\Projet\\UnitTestProject1\\obj\\",
+      "projectPath": "C:\\Users\\Nutzer\\Documents\\CESI\\Projet Prog.Système\\Projet_Prog_System_A3\\Projet\\UnitTestProject1\\UnitTestProject1.csproj",
+      "packagesPath": "C:\\Users\\Nutzer\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Nutzer\\Documents\\CESI\\Projet Prog.Système\\Projet_Prog_System_A3\\Projet\\UnitTestProject1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Pitel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nutzer\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5883,8 +5889,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Pitel\\Desktop\\CESI Exia\\A3\\Semestre 5\\Bloc 2 - Programmation\\Projet_Prog_System_A3\\Projet_Prog_System_A3\\Projet\\Metier\\Metier.csproj": {
-              "projectPath": "C:\\Users\\Pitel\\Desktop\\CESI Exia\\A3\\Semestre 5\\Bloc 2 - Programmation\\Projet_Prog_System_A3\\Projet_Prog_System_A3\\Projet\\Metier\\Metier.csproj"
+            "C:\\Users\\Nutzer\\Documents\\CESI\\Projet Prog.Système\\Projet_Prog_System_A3\\Projet\\Metier\\Metier.csproj": {
+              "projectPath": "C:\\Users\\Nutzer\\Documents\\CESI\\Projet Prog.Système\\Projet_Prog_System_A3\\Projet\\Metier\\Metier.csproj"
             }
           }
         }
@@ -5927,13 +5933,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problème de lecture du fichier cache C:\\Users\\Pitel\\Desktop\\CESI Exia\\A3\\Semestre 5\\Bloc 2 - Programmation\\Projet_Prog_System_A3\\Projet_Prog_System_A3\\Projet\\UnitTestProject1\\obj\\UnitTestProject1.csproj.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

@@ -7,3 +7,17 @@ C:\Users\Pitel\Desktop\Projet\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj
 C:\Users\Pitel\Desktop\Projet\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
 C:\Users\Pitel\Desktop\Projet\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\Pitel\Desktop\Projet\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\WindowsFormsApp1\bin\Debug\Metier.dll
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\WindowsFormsApp1\bin\Debug\Metier.pdb
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\WindowsFormsApp1\bin\Debug\Metier.dll.config
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb

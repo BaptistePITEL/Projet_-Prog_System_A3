@@ -18,3 +18,23 @@ C:\Users\Pitel\Desktop\CESI Exia\A3\Semestre 5\Bloc 2 - Programmation\Projet_Pro
 C:\Users\Pitel\Desktop\CESI Exia\A3\Semestre 5\Bloc 2 - Programmation\Projet_Prog_System_A3\Projet_Prog_System_A3\Projet\Sim\obj\Debug\netcoreapp2.1\Sim.csproj.CopyComplete
 C:\Users\Pitel\Desktop\CESI Exia\A3\Semestre 5\Bloc 2 - Programmation\Projet_Prog_System_A3\Projet_Prog_System_A3\Projet\Sim\obj\Debug\netcoreapp2.1\Sim.dll
 C:\Users\Pitel\Desktop\CESI Exia\A3\Semestre 5\Bloc 2 - Programmation\Projet_Prog_System_A3\Projet_Prog_System_A3\Projet\Sim\obj\Debug\netcoreapp2.1\Sim.pdb
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Sim\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Sim\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Sim\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Sim\bin\Debug\netcoreapp2.1\Sim.deps.json
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Sim\bin\Debug\netcoreapp2.1\Sim.runtimeconfig.json
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Sim\bin\Debug\netcoreapp2.1\Sim.runtimeconfig.dev.json
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Sim\bin\Debug\netcoreapp2.1\Sim.dll
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Sim\bin\Debug\netcoreapp2.1\Sim.pdb
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Sim\bin\Debug\netcoreapp2.1\Metier.dll
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Sim\bin\Debug\netcoreapp2.1\UnitTestProject1.dll
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Sim\bin\Debug\netcoreapp2.1\Metier.pdb
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Sim\bin\Debug\netcoreapp2.1\Metier.dll.config
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Sim\bin\Debug\netcoreapp2.1\UnitTestProject1.pdb
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Sim\obj\Debug\netcoreapp2.1\Sim.csprojAssemblyReference.cache
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Sim\obj\Debug\netcoreapp2.1\Sim.csproj.CoreCompileInputs.cache
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Sim\obj\Debug\netcoreapp2.1\Sim.AssemblyInfoInputs.cache
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Sim\obj\Debug\netcoreapp2.1\Sim.AssemblyInfo.cs
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Sim\obj\Debug\netcoreapp2.1\Sim.csproj.CopyComplete
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Sim\obj\Debug\netcoreapp2.1\Sim.dll
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Sim\obj\Debug\netcoreapp2.1\Sim.pdb

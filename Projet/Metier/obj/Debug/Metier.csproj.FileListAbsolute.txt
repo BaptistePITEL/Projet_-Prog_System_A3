@@ -13,3 +13,12 @@ C:\Users\Pitel\Desktop\CESI Exia\A3\Semestre 5\Bloc 2 - Programmation\Projet_Pro
 C:\Users\Pitel\Desktop\CESI Exia\A3\Semestre 5\Bloc 2 - Programmation\Projet_Prog_System_A3\Projet_Prog_System_A3\Projet\Metier\obj\Debug\Metier.csproj.CopyComplete
 C:\Users\Pitel\Desktop\CESI Exia\A3\Semestre 5\Bloc 2 - Programmation\Projet_Prog_System_A3\Projet_Prog_System_A3\Projet\Metier\bin\Debug\Metier.dll.config
 C:\Users\Pitel\Desktop\CESI Exia\A3\Semestre 5\Bloc 2 - Programmation\Projet_Prog_System_A3\Projet_Prog_System_A3\Projet\Metier\obj\Debug\Metier.csprojAssemblyReference.cache
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Metier\bin\Debug\Metier.dll.config
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Metier\bin\Debug\Metier.dll
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Metier\bin\Debug\Metier.pdb
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Metier\bin\Debug\System.Data.SqlClient.dll
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Metier\obj\Debug\Metier.csprojAssemblyReference.cache
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Metier\obj\Debug\Metier.csproj.CoreCompileInputs.cache
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Metier\obj\Debug\Metier.csproj.CopyComplete
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Metier\obj\Debug\Metier.dll
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\Metier\obj\Debug\Metier.pdb
