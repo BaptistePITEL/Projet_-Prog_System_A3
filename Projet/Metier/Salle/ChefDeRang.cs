@@ -18,6 +18,7 @@ namespace Metier.Salle
         public int compteurCommande = 0;
         public int compteurTable = 0;
         public int compteurCarte = 0;
+        public int statChefDeRang = 0;
 
         public ChefDeRang(Restaurant resto, Carre carre, string nom) : base(nom)
         {
@@ -33,7 +34,6 @@ namespace Metier.Salle
 
         public override void tick()
         {
-
 
             foreach (Rang r in carre.rangs)
             {
@@ -51,6 +51,7 @@ namespace Metier.Salle
 
             if (tablesPretaCommander.Count != 0)
             {
+                statChefDeRang += 1;
                 compteurCommande += 1;
                 if (compteurCommande == 5)
                 {
@@ -63,6 +64,7 @@ namespace Metier.Salle
             {
                 if (this.table.enumEtatTable == EnumEtatTable.INSTALLE)
                 {
+                    statChefDeRang += 1;
                     compteurCarte += 1;
                     if (compteurCarte == 2)
                     {
@@ -74,6 +76,7 @@ namespace Metier.Salle
             }
             else if (this.gC != null)
             {
+                statChefDeRang += 1;
                 compteurTable += 1;
                 if (compteurTable == 5)
                 {
@@ -101,18 +104,18 @@ namespace Metier.Salle
         {
             int quitter = 0;
 
-            log("Nombre de rangs : " + carre.rangs.Count + "\n");
+            //log("Nombre de rangs : " + carre.rangs.Count + "\n");
 
             foreach (Rang r in carre.rangs)
             {
                 int b = carre.rangs.IndexOf(r) + 1;
-                log("--------    RANG " + b + " :   --------");
-                log("Nombre de table dans le rang " + b + " : " + carre.rangs.Count + "\n");
+                //log("--------    RANG " + b + " :   --------");
+                //log("Nombre de table dans le rang " + b + " : " + carre.rangs.Count + "\n");
                 foreach (Table t in r.tables)
                 {
                     int a = r.tables.IndexOf(t) + 1;
-                    log("Table " + a + " : ");
-                    log("Nombre de client : " + gC.clients.Count + " / Nombre de places : " + t.nbPlaces + "\n");
+                    //log("Table " + a + " : ");
+                    //log("Nombre de client : " + gC.clients.Count + " / Nombre de places : " + t.nbPlaces + "\n");
                     if (t.nbPlaces - gC.clients.Count == 0 || t.nbPlaces - gC.clients.Count == 1)
                     {
                         if (t.grclient == null)
@@ -122,7 +125,7 @@ namespace Metier.Salle
                             t.grclient = gC;
                             t.enumEtatTable = EnumEtatTable.INSTALLE;
                             this.gC = null;
-                            log("TABLE TROUVE \n");
+                            log("Table [" + t.numeroTable + "] attribuée au groupe de clients \n");
                             quitter = 1;
                             break;
                         }
@@ -169,7 +172,7 @@ namespace Metier.Salle
 
         public void prendreCommande(Table t)
         {
-            log("" + t.grclient.clients.Count);
+            //log("" + t.grclient.clients.Count);
 
             Commande commande = new Commande(t);
 
@@ -193,7 +196,7 @@ namespace Metier.Salle
             resto.comptoir.commandeAPrepare.Enqueue(commande);
             t.enumEtatTable = EnumEtatTable.COMMANDE_EMISE;
 
-            log("Commande prise sur la table :  "+commande.recettes.Count + " plat(s)");
+            log("Commande prise sur la table [" + t.numeroTable +"] :  "+commande.recettes.Count + " recette(s)");
 
         }
 

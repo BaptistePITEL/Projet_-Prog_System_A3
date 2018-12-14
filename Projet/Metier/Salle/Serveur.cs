@@ -19,6 +19,7 @@ namespace Metier.Salle
         public static int serviceEntree = 0;
         public static int servicePlat = 0;
         public static int serviceDessert = 0;
+        public int statServeur = 0;
 
         public Recette recette;
         
@@ -37,6 +38,7 @@ namespace Metier.Salle
         {
             if (restaurant.comptoir.entreesAServir.Count != 0)
             {
+
                 bool grClientPresent = false;
 
                 foreach (Recette recette in restaurant.comptoir.entreesAServir)
@@ -80,7 +82,7 @@ namespace Metier.Salle
 
                         if ((nombreClient_Entree == restaurant.comptoir.entreesAServir.Count || serviceEntree >= 1) && tablePresente == 1)
                         {
-
+                            statServeur += 1;
                             compteurServirEntree += 1;
 
                             if (compteurServirEntree == 2)
@@ -97,7 +99,7 @@ namespace Metier.Salle
                                             if (client.platRecu == null)
                                             {
                                                 client.platRecu = recette;
-                                                log("" + this.nom + ": Entrées servis : " + recette.titre + "    " + this.carre.id);
+                                                log("Entrées : " + recette.titre + " servis à la table [" + client.groupeClient.table.numeroTable + "]");
                                                 recette = null;
                                                 quitter = 1;
                                                 break;
@@ -173,6 +175,7 @@ namespace Metier.Salle
 
                     if ((nombreClient_Plat == restaurant.comptoir.platsAServir.Count || servicePlat >= 1) && tablePresente == 1 && (restaurant.comptoir.platsAServir.First().table.enumEtatTable == EnumEtatTable.COMMANDE_EMISE))
                     {
+                        statServeur += 1;
                         compteurServirPlat += 1;
 
                         if (compteurServirPlat == 2)
@@ -190,7 +193,7 @@ namespace Metier.Salle
                                         if (client.platRecu == null)
                                         {
                                             client.platRecu = recette;
-                                            log("" + this.nom + ": Plat servis : " + recette.titre);
+                                            log("Plat : " + recette.titre + " servis à la table [" + client.groupeClient.table.numeroTable + "]");
                                             recette = null;
                                             quitter = 1;
                                             break;
@@ -259,6 +262,7 @@ namespace Metier.Salle
 
                         if ((nombreClient_Dessert == restaurant.comptoir.dessertsAServir.Count || serviceDessert >= 1) && tablePresente == 1 && (restaurant.comptoir.dessertsAServir.First().table.enumEtatTable == EnumEtatTable.COMMANDE_EMISE))
                         {
+                            statServeur += 1;
                             compteurServirDessert += 1;
 
                             if (compteurServirDessert == 2)
@@ -275,7 +279,7 @@ namespace Metier.Salle
                                             if (client.platRecu == null)
                                             {
                                                 client.platRecu = recette;
-                                                log("" + this.nom + ": Dessert servis : " + recette.titre);
+                                                log("Dessert : " + recette.titre + " servis à la table [" + client.groupeClient.table.numeroTable + "]");
 
                                                 recette = null;
                                                 quitter = 1;

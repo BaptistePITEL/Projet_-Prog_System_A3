@@ -21,3 +21,5 @@ C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet
 C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
 C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\WindowsFormsApp1\bin\Debug\EPPlus.dll
+C:\Users\Nutzer\Documents\CESI\Projet Prog.Système\Projet_Prog_System_A3\Projet\WindowsFormsApp1\bin\Debug\EPPlus.xml

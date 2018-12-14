@@ -71,26 +71,26 @@ namespace Metier.Salle
             if (nombreEntreRecu == this.clients.Count)
             {
                 table.enumEtatTable = EnumEtatTable.ENTREE;
-                foreach (var client in clients)
+                /*foreach (var client in clients)
                 {
                     client.log(" Entrées reçu : " + client.platRecu.titre);
-                }
+                }*/
             }
             if (nombrePlatRecu == this.clients.Count)
             {
                 table.enumEtatTable = EnumEtatTable.PLAT;
-                foreach(var client in clients)
+                /*foreach(var client in clients)
                 {
                     client.log(" Plat reçu : " + client.platRecu.titre);
-                }
+                }*/
             }
             if (nombreDessertRecu == this.clients.Count)
             {
                 table.enumEtatTable = EnumEtatTable.DESSERT;
-                foreach(var client in clients)
+                /*foreach(var client in clients)
                 {
                     client.log(" Desserts reçu : " + client.platRecu.titre);
-                }
+                }*/
             }
 
         }
@@ -113,7 +113,7 @@ namespace Metier.Salle
                 table.enumEtatTable = EnumEtatTable.COMMANDE_EMISE;
                 foreach (var client in clients)
                 {
-                    client.log(" Table fini de mangé Plat");
+                    client.log("----- La table [" + table.numeroTable+ "] a fini de mangé ses plats -----");
                     break;
                 }
             }
@@ -137,7 +137,7 @@ namespace Metier.Salle
                 table.enumEtatTable = EnumEtatTable.COMMANDE_EMISE;
                 foreach (var client in clients)
                 {
-                    client.log(" Table fini de mangé Entrée");
+                    client.log("----- La table [" + table.numeroTable + "] a fini de mangé ses entrées -----");
                     break;
                 }
             }
@@ -160,7 +160,7 @@ namespace Metier.Salle
                 table.enumEtatTable = EnumEtatTable.REPAS_FINI;
                 foreach (var client in clients)
                 {
-                    client.log(" Table fini de mangé Dessert");
+                    client.log("La table [" + table.numeroTable + "] a fini de mangé ses desserts");
                     break;
                 }
             }
@@ -183,7 +183,7 @@ namespace Metier.Salle
                 table.enumEtatTable = EnumEtatTable.PAYE;
                 foreach (var client in clients)
                 {
-                    client.log("La table a paye et le groupe part");
+                    client.log("La table ["+ table.numeroTable + "] a payé et le groupe part");
                     break;
                 }
 

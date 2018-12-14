@@ -20,7 +20,7 @@ namespace Metier.Builder
             this.restaurant = new Restaurant();
         }
 
-        public void buildCarres(int nbCarre, int nbRangsParCarre, int nbTablesParRang,int tailleTable, List<string> chefs, List<string> serveurs)
+        public void buildCarres(int nbCarre, int nbRangsParCarre, List<string> chefs, List<string> serveurs)
         {
             List<int> list = new List<int> { 2, 4, 6, 8, 10 };
 
@@ -41,16 +41,19 @@ namespace Metier.Builder
                 {
 
                     var r = new Rang();
+                    int compteurTailleTable = 0;
                     r.Carre = restaurant.carres[i];
                     restaurant.carres[i].rangs.Add(r);
                     
-                    for (int k = 0; k < nbTablesParRang; k++)
+                    for (int k = 0; k < 5; k++)
                     {
                         compteurNumeroTable += 1;
-                        var table = new Table(list[rnd.Next(0, list.Count - 1)], compteurNumeroTable);
+                        var table = new Table(list[compteurTailleTable], compteurNumeroTable);
                         table.rang = r;
                         restaurant.carres[i].rangs[j].tables.Add(table);
+                        compteurTailleTable += 1;
                     }
+                    compteurTailleTable = 0;
                 }
             }
         }

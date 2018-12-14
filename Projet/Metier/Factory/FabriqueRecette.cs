@@ -14,12 +14,11 @@ namespace Metier.Factory
     {
         public DataTable d1;
         public List<DataRow> list;
+        public static Random r = new Random();
 
         public Recette create(int type, Table tb)
         {
-            Random r = new Random();
-            int i = r.Next(1, 10);
-
+            int i = r.Next(1, 5);
             if (type == 1)
             {
                 if (i == 1)
@@ -79,16 +78,19 @@ namespace Metier.Factory
                     }
                     else if (i == 3)
                     {
-                        return new Recette("Desserts", "Tiramusi", 60, 0, 60, tb);
+                        return new Recette("Desserts", "Tiramisu", 60, 0, 60, tb);
+                    }
+                    else if(i == 4)
+                    {
+                        return new Recette("Desserts", "Madeleine au miel", 15, 5, 0, tb);
                     }
                     else
                     {
-                        return new Recette("Desserts", "Madeleine au miel", 15, 5, 0, tb);
+                        return new Recette("Desserts", "Fondant au chocolat", 20, 5, 0, tb);
                     }
                 }
 
             }
-
 
         }
       

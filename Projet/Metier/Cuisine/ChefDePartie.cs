@@ -14,6 +14,7 @@ namespace Metier.Cuisine
         public Restaurant restaurant;
         public int compteurPrepa = 0;
         public int compteurRecette = 0;
+        public int statChefDePartie = 0;
         
         public ChefDePartie(string nom, Restaurant r, List<string> roles) : base(nom)
         {
@@ -44,7 +45,8 @@ namespace Metier.Cuisine
                 compteurPrepa += 1;
                 if (compteurPrepa == 20)
                 {
-                   
+
+                    statChefDePartie += compteurPrepa;
                     compteurPrepa = 0;
                     recettes.First().etat = true;
                     if (recettes.First().categorie.Equals("Entrées"))

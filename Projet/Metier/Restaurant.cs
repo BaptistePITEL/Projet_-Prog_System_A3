@@ -58,13 +58,16 @@ namespace Metier
                 
 
 
-                chefDeCuisine.tick();
-                foreach(ChefDePartie chef in chefDeCuisine.chefParties)
-                {
-                    chef.tick();
-                }
+             
             }
-           //log("------------------ FIN TICK ------------------");
+
+            chefDeCuisine.tick();
+            foreach (ChefDePartie chef in chefDeCuisine.chefParties)
+            {
+                chef.tick();
+            }
+
+            //log("------------------ FIN TICK ------------------");
         }
         public void tickFor(int x)
         {

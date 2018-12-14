@@ -9,6 +9,7 @@ namespace Metier.Salle
     public class MaitreHotel : Personnel
     {
         public Restaurant resto;
+        public int statMaitreHotel = 0;
 
         public MaitreHotel(Restaurant resto, string nom) : base(nom)
         {
@@ -23,21 +24,25 @@ namespace Metier.Salle
         public override void tick()
         {
             int quitter = 0;
+            if(resto.listAttente.Count != 0)
+            {
+                statMaitreHotel += 1;
+            }
             foreach( GroupeClient gC in resto.listAttente)
             {   
                 foreach (Carre c in resto.carres)
                 {
                    if( c.chefDeRang.isDispo())
                     {
-                        log("" + c.chefDeRang.nom + " est disponible, Client attribué");
                         c.chefDeRang.gC = gC;
                         resto.listAttente.Remove(gC);
                         quitter = 1;
+                        log("Le " + c.chefDeRang.nom + " est disponible, le groupe de clients a été attribué");
                         break;
                     }
                    else
                     {
-                        log("Chef de rang du carré " + resto.carres.IndexOf(c) + " indisponible");
+                        log("Le chef de rang du carré [" + resto.carres.IndexOf(c) + "] est indisponible");
                     }
                 }
                 if (quitter == 1)
@@ -46,7 +51,7 @@ namespace Metier.Salle
                 }
                 else
                 {
-                    log("Pas de place dans le restaurant");
+                    log("Il n'y a pas de place dans le restaurant");
                 }          
             }
         }

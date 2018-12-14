@@ -26,7 +26,9 @@ namespace Metier.Salle
 
         public bool paye = false;
 
-        public FabriqueRecette fR = new FabriqueRecette();
+        public FabriqueRecette fRe = new FabriqueRecette();
+        public FabriqueRecette fRp = new FabriqueRecette();
+        public FabriqueRecette fRd = new FabriqueRecette();
 
         public Client(GroupeClient groupeClient, string nom) : base(nom)
         {
@@ -43,17 +45,20 @@ namespace Metier.Salle
             if (groupeClient != null)
             {
                 compteur += 1;
-                if (groupeClient.table.enumEtatTable == EnumEtatTable.ONT_CARTE && compteur == 5)
+                if (groupeClient.table.enumEtatTable == EnumEtatTable.ONT_CARTE && compteur == 8)
                 {
-                    this.entree = fR.create(1, groupeClient.table);
-                    this.plat = fR.create(2, groupeClient.table);
-                    this.dessert = fR.create(3, groupeClient.table);
+                    this.entree = fRe.create(1, groupeClient.table);
+                    this.plat = fRp.create(2, groupeClient.table);
+                    this.dessert = fRd.create(3, groupeClient.table);
 
 
 
                     groupeClient.checkToutLeMondePret();
                     //table.enumEtatTable = EnumEtatTable.PRET_A_COMMANDE;
-                    log(nom + " prêt a commander, " + compteur);
+                    if (this.Equals(groupeClient.clients.First()))
+                    {
+                        log("Table [" + groupeClient.table.numeroTable + "] prête à commander.");
+                    }
                 }
                 else if (platRecu != null)
                 {

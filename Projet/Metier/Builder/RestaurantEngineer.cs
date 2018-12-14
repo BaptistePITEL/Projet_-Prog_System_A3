@@ -20,9 +20,9 @@ namespace Metier.Builder
             return this.restaurantBuilder.getRestaurant();
         }
 
-        public void makeRestaurant(int nbCarre, int nbRangsParCarre, int nbTablesParRang, int tailleTable, List<string> chefs, string nomMaitreHotel,string nomChefDeCuisine, List<string> serveurs)
+        public void makeRestaurant(int nbCarre, int nbRangsParCarre, List<string> chefs, string nomMaitreHotel,string nomChefDeCuisine, List<string> serveurs)
         {
-            this.restaurantBuilder.buildCarres(nbCarre, nbRangsParCarre, nbTablesParRang,  tailleTable, chefs, serveurs);
+            this.restaurantBuilder.buildCarres(nbCarre, nbRangsParCarre, chefs, serveurs);
             this.restaurantBuilder.buildMaitreHotel(nomMaitreHotel);
             this.restaurantBuilder.buildChefDeCuisine(nomChefDeCuisine);
             this.restaurantBuilder.buildComptoir();

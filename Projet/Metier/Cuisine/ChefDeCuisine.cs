@@ -13,6 +13,7 @@ namespace Metier.Cuisine
         public Queue<Commande> commandes;
         public List<ChefDePartie> chefParties;
         public Restaurant resto;
+        public int statChefDeCuisine = 0;
 
         public int compteur = 0;
 
@@ -34,6 +35,7 @@ namespace Metier.Cuisine
 
             if (resto.comptoir.commandeAPrepare.Count != 0)
             {
+                statChefDeCuisine += 1;
                 compteur += 1;
                 if (compteur == 5)
                 {
@@ -62,16 +64,16 @@ namespace Metier.Cuisine
             {   
                 Commande c = this.commandes.Dequeue();
 
-                log("Nombre de recette : " + c.recettes.Count);
+                //log("Nombre de recette : " + c.recettes.Count);
 
-                foreach (var rct in c.recettes)
+                /*foreach (var rct in c.recettes)
                 {
                     log("Recette : " + rct.titre);
-                }
+                }*/
 
                 foreach (Recette r in c.recettes)
                 {
-                    log("Catégorie : " + r.categorie );
+                    //log("Catégorie : " + r.categorie );
 
                     r.table = c.table;
                     int quitter = 0;
